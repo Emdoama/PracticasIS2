@@ -1,0 +1,62 @@
+PROPIETARIO 1
+
+Nombre del propietario: Emilio
+Correo Electronico: domae@uv.es
+
+	PRESTAMOS DEL OBJETO 1
+
+		Nombre del cliente: Albert
+		Fecha del prestamo: 23/10/2018 - 23/11/2018
+		importe para el propietario: 300
+		Importe para la startup: 30
+
+	PRESTAMOS DEL OBJETO 2
+
+		Nombre del cliente: Diego
+		Fecha del prestamo: 23/10/2018 - 23/11/2018
+		importe para el propietario: 600
+		Importe para la startup: 60
+
+	PRESTAMOS DEL OBJETO 3
+
+	El objeto 3 no tiene prestamos a mostrar.
+
+PROPIETARIO 2
+
+Nombre del propietario: Albert
+Correo Electronico: alpama@uv.es
+
+	PRESTAMOS DEL OBJETO 4
+
+	El objeto 4 no tiene prestamos a mostrar.
+
+	PRESTAMOS DEL OBJETO 5
+
+	El objeto 5 no tiene prestamos a mostrar.
+
+	PRESTAMOS DEL OBJETO 6
+
+	El objeto 6 no tiene prestamos a mostrar.
+
+PROPIETARIO 3
+
+Nombre del propietario: Diego
+Correo Electronico: diemomar@uv.es
+
+	PRESTAMOS DEL OBJETO 7
+
+		Nombre del cliente: Emilio
+		Fecha del prestamo: 23/10/2018 - 23/11/2018
+		importe para el propietario: 300
+		Importe para la startup: 30
+
+	PRESTAMOS DEL OBJETO 8
+
+	El objeto 8 no tiene prestamos a mostrar.
+
+	PRESTAMOS DEL OBJETO 9
+
+	El objeto 9 no tiene prestamos a mostrar.
+
+El importe total para la startup es de:  120 euros
+

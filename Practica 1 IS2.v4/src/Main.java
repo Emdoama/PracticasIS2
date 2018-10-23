@@ -1,9 +1,14 @@
+import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.InputStream;
+import java.io.PrintStream;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.GregorianCalendar;
 import java.util.InputMismatchException;
 import java.util.Scanner;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -53,7 +58,8 @@ public class Main
                                "5. Baja objeto\n" +
                                "6. Mostrar saldos\n" +
                                "7. Salir\n" + 
-                               "8. Modificar Saldo\n" );
+                               "8. Modificar Saldo\n" +
+                               "9. Portabilidad Saldos\n" );
            
             try{
                 scan= new Scanner(System.in);
@@ -87,7 +93,10 @@ public class Main
                     break;
                  case 8:
                     ModificarSaldo();
-                    break;   
+                    break;
+                 case 9:
+                    PortabilidadSaldos();
+                    break;     
                 default:
                     System.out.println("La opción elegida no es valida\n");                          
             }
@@ -390,6 +399,7 @@ public class Main
         return new GregorianCalendar(anyoInicio, mesInicio, diaInicio);
         
     }
+    
      public static GregorianCalendar pedirFechaFin()
     {
         Pattern patronDia = Pattern.compile("^(([0]?[1-9])|([1-2][0-9])|(3[01]))$");
@@ -495,6 +505,22 @@ public class Main
         }catch(Exception e){System.out.print("El objeto no existe\n");}
     }
     
+     public static void PortabilidadSaldos()
+    {
+                  
+            PrintStream fichero = null;
+            PrintStream stdout = System.out;
+        try {
+            fichero = new PrintStream(new File("fichero.txt"));
+        } catch (FileNotFoundException ex) {
+            Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
+        }
+            System.setOut(fichero);
+            MostrarSaldos();
+            System.setOut(stdout);
+            System.out.println("Guardado");
+         
+    }
 }
      
      
