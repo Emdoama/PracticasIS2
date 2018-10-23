@@ -335,7 +335,7 @@ public class Main
         System.out.println("El importe total para la startup es de:  " +cant + " euros\n");    
     }
     
-    public static GregorianCalendar pedirFechaInicio()
+    public  GregorianCalendar pedirFechaInicio()
     {
         Pattern patronDia = Pattern.compile("^[1-31]+$");
         Pattern patronMes = Pattern.compile("^[1-12]+$");
@@ -388,7 +388,7 @@ public class Main
         return new GregorianCalendar(anyoInicio, mesInicio, diaInicio);
         
     }
-     public static GregorianCalendar pedirFechaFin()
+     public GregorianCalendar pedirFechaFin()
     {
         Pattern patronDia = Pattern.compile("^[1-31]+$");
         Pattern patronMes = Pattern.compile("^[1-12]+$");
