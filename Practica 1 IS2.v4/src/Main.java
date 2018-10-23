@@ -53,7 +53,7 @@ public class Main
                                "5. Baja objeto\n" +
                                "6. Mostrar saldos\n" +
                                "7. Salir\n" + 
-                               "8. Modificar Salgo\n" );
+                               "8. Modificar Saldo\n" );
            
             try{
                 scan= new Scanner(System.in);
@@ -85,14 +85,14 @@ public class Main
                 case 7:
                     System.exit(0);
                     break;
-                 case 9:
+                 case 8:
                     ModificarSaldo();
                     break;   
                 default:
                     System.out.println("La opción elegida no es valida\n");                          
             }
             
-        }while(caso!=8);
+        }while(caso!=7);
     }
       
     
