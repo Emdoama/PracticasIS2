@@ -19,12 +19,13 @@ public class Main
     static Usuario user;
     static int caso;
     static boolean flag=false;
-    
-   
+    public static final String ANSI_BLUE = "\u001B[34m";
+    public static final String ANSI_BLACK_BACKGROUND = "\u001B[40m";
     
     
     public static void main (String Args[])
         {
+            //Creacion de datos base
         Usuarios.add(new Usuario("Emilio", "domae@uv.es"));
         Usuarios.add(new Usuario("Albert", "alpama@uv.es"));
         Usuarios.add(new Usuario("Diego", "diemomar@uv.es"));
@@ -45,11 +46,13 @@ public class Main
         Usuarios.get(0).Objetos.get(1).alquilarObjeto( new Alquiler (Usuarios.get(2),Usuarios.get(0).Objetos.get(1),new GregorianCalendar(2018,10,23),new GregorianCalendar(2018,11,23)) );
         Usuarios.get(2).Objetos.get(0).alquilarObjeto( new Alquiler (Usuarios.get(0),Usuarios.get(2).Objetos.get(0),new GregorianCalendar(2018,10,23),new GregorianCalendar(2018,11,23)) );
         
-        
-        System.out.println("Bienvenido a la aplicación MaxRend\n");
+        //Mensaje bienvenida
+        System.out.println("\n\n\n"+ ANSI_BLUE + "Bienvenido a la aplicación MaxRend\n" );
 
+        //Bucle se repite mientras la opcion no sea la de salir
         do
         {
+            //Mensaje opciones menu
             System.out.println("\nSelecciona una de las siguientes opciones:\n"+
                                "1. Alta usuario\n" +
                                "2. Alta objeto\n" +
@@ -59,15 +62,16 @@ public class Main
                                "6. Mostrar saldos\n" +
                                "7. Salir\n" + 
                                "8. Modificar Saldo\n" +
-                               "9. Portabilidad Saldos\n" );
-           
+                               "9. Portabilidad Saldos\n" +
+                               "0. Eliminar Usuario\n" );
+           //Intenta leer un entero para las opciones
             try{
                 scan= new Scanner(System.in);
                 caso = scan.nextInt();
-               
+            //Captura el error   
             }catch(InputMismatchException ime){System.out.println("\nDebes introducir un número del 1 al 7, por favor.\n"); }
                      
-            
+            //Switch con las opciones
             switch (caso)
             {
                 case 1:
@@ -96,7 +100,10 @@ public class Main
                     break;
                  case 9:
                     PortabilidadSaldos();
-                    break;     
+                    break;
+                 case 0:
+                    EliminarUsuario();
+                    break;      
                 default:
                     System.out.println("La opción elegida no es valida\n");                          
             }
@@ -104,9 +111,10 @@ public class Main
         }while(caso!=7);
     }
       
-    
+    //Funcion para dar de alta el usuario
     public static void AltaUsuario()
     {
+        
         String name, mail;
         Pattern pattern = Pattern.compile("^[a-zA-Z]+$");
         Pattern pattern2= Pattern.compile("^[_a-zA-Z0-9-]+(.[_a-zA-Z0-9-]+)*@[a-zA-Z0-9-]+(.[a-zA-Z0-9-]+)*(.[a-zA-Z]{2,4})$");
@@ -138,17 +146,21 @@ public class Main
               }
         }catch(Exception e ){System.out.println("Introduce un mail válido.\n"); mail = null;}
          
-      
+      //Solo crea si se han rellenado bien los campos
         if(name!= null && mail!= null)
         {
+            //Constructor
             user = new Usuario(name, mail);
+            //Añadimos al Array de usuarios
             Usuarios.add(user);
         }else
             System.out.println("Este usuario no se creara debido a valores incorrectos en los campos, por favor intentelo de nuevo\n");
-    }         
+    }   
     
+    //Funcion para dar de alta un objeto
     public static void AltaObjeto()
     {
+        
         int idPropietario, coste;
         Calendar inicio = null, fin = null;
         String descripcion;
@@ -157,14 +169,14 @@ public class Main
         Pattern patronAnyo = Pattern.compile("^(20)[18-99]+$");
         Matcher matcher;
 
-        
+        //Listamos los usuarios
         System.out.println("\nLista de usuarios: ");
         for (int i = 0; i < Usuarios.size(); i++)
         {
             Usuarios.get(i).toString(); 
             System.out.println("\n");
         }
-        
+        //Bucle para poder elegir un usuario creado previamente, se repite minetras no haya errores
         do{
            
         try{
@@ -191,20 +203,28 @@ public class Main
                 
         flag= false;
        
+            
         System.out.println("\nIntroduce la descripcion del objeto: ");
         scan.next();
         descripcion = scan.nextLine();                        
        
+        //Capturamos las fechas que se quieren
         inicio = pedirFechaInicio();     
         fin=  pedirFechaFin();        
                         
         
-        System.out.println("\nIntroduce el coste: ");        
-        coste = scan.nextInt();
-        
+       //Capturamos el coste
+       do{       
+            System.out.println("\nIntroduce el nuevo coste: ");       
+            try{
+            scan= new Scanner(System.in);
+            coste = scan.nextInt();
+            }catch(InputMismatchException ime){System.out.println("\nDebes introducir un ID válido\n"); coste = -1;}
+        }while(coste == -1);
+        //Creamos el objeto
         Objeto objeto = new Objeto(idPropietario, descripcion, inicio, fin, coste);
         
-        
+        //Lo añadimos
         for (int i = 0; i < Usuarios.size(); i++)
         {           
             try{
@@ -215,7 +235,7 @@ public class Main
             }catch(Exception e){ System.out.println("El usuario no esta dado de alta");}
         }
     }
-    
+    //Funcion para crear Alquileres
     public static void AlquilarObjeto()
     {
         int idObjeto, idUsuario;
@@ -224,7 +244,7 @@ public class Main
         Objeto objetoAct=null;
 	
         
-        
+        //Bucle para poder elegir un usuario creado previamente, se repite minetras no haya errores
         do{
         System.out.println("\nIntroduce el id de usuario: ");
         idUsuario = scan.nextInt();
@@ -240,33 +260,36 @@ public class Main
         }        
         }while(usuarioAct==null);
         
+        //Mostramos los objetos alquilables
         for(Usuario user: Usuarios)
         {
-            user.mostrarObjetos();   
+            
+            user.mostrarObjetosAlquilables();   
         
         }       
-        
+        //Pedimos uno, se repite mientras no se elija uno bueno
         do{    
             System.out.println("\nIntroduce el id del objeto: ");       
             try{
                 idObjeto = scan.nextInt();
             }catch(InputMismatchException ime){System.out.println("\nDebes introducir un ID válido\n"); idObjeto = 0;}
         }while(idObjeto == 0); 
-        
+        //Si se puede alquilar
         try{
-            objetoAct = usuarioAct.getObjeto(idObjeto);
+            if(objetoAct.isActivo())
+            objetoAct = usuarioAct.getObjeto(idObjeto);                
         }catch(Exception e){System.out.println("El objeto no existe"); }
         
-	
+	//Pedimos fechas
         inicio = pedirFechaInicio();     
         fin=  pedirFechaFin();        
                              
-      
+        //Construimos el alquiler y lo añadimos al objeto
         Alquiler alquilerAct = new Alquiler(usuarioAct, objetoAct, inicio, fin); 
         objetoAct.alquilarObjeto(alquilerAct);
         
     }
-    
+    //Listamos los Objetos con sus alquileres
     public static void ListarObjetos()
     {
         for (int i = 0; i < Usuarios.size(); i++)
@@ -277,7 +300,7 @@ public class Main
                       
         }
     }
-    
+    //Desactivamos un objeto para el alquiler
     public static void BajaObjeto()
     {
      int idObjeto,idPropietario;
@@ -307,7 +330,7 @@ public class Main
         catch(Exception e){ System.out.println("El usuario no esta dado de alta");idPropietario = 0;}
        }while(idPropietario==0);
        
-       
+       flag=false;
        
        
         do{       
@@ -323,7 +346,7 @@ public class Main
         System.out.println("Objejto dado de baja\n");
         }catch(Exception e){System.out.println("Objeto erroneo\n");}
     }
-    
+    //Mostramos Salgos
     public static void MostrarSaldos()
     {
         int cant=0;
@@ -342,10 +365,10 @@ public class Main
             }
             
         }
-        flag =false;
+        
         System.out.println("El importe total para la startup es de:  " +cant + " euros\n");    
     }
-    
+    //Funcion auxiliar para pedir fechas iniciales
     public static GregorianCalendar pedirFechaInicio()
     {
         Pattern patronDia = Pattern.compile("^(([0]?[1-9])|([1-2][0-9])|(3[01]))$");
@@ -399,7 +422,7 @@ public class Main
         return new GregorianCalendar(anyoInicio, mesInicio, diaInicio);
         
     }
-    
+    //Funcion auxiliar para pedir fechar finales
      public static GregorianCalendar pedirFechaFin()
     {
         Pattern patronDia = Pattern.compile("^(([0]?[1-9])|([1-2][0-9])|(3[01]))$");
@@ -453,7 +476,7 @@ public class Main
         
 
     }
-     
+    //Primera Mejora 
     public static void ModificarSaldo()
     {
          int idObjeto,idPropietario,coste;
@@ -483,12 +506,13 @@ public class Main
         catch(Exception e){ System.out.println("El usuario no esta dado de alta");idPropietario = 0;}
         while(idPropietario==0);
        
-       
+       flag=false;
        
        
         do{       
             System.out.println("\nIntroduce el id del objeto: ");       
             try{
+            scan= new Scanner(System.in);
             idObjeto = scan.nextInt();
             }catch(InputMismatchException ime){System.out.println("\nDebes introducir un ID válido\n"); idObjeto = 0;}
         }while(idObjeto == 0); 
@@ -496,6 +520,7 @@ public class Main
        do{       
             System.out.println("\nIntroduce el nuevo coste: ");       
             try{
+            scan= new Scanner(System.in);    
             coste = scan.nextInt();
             }catch(InputMismatchException ime){System.out.println("\nDebes introducir un ID válido\n"); coste = -1;}
         }while(coste == -1);
@@ -504,12 +529,12 @@ public class Main
         usuarioAct.modificarCosteObjeto(usuarioAct.devolverObjeto(idObjeto),coste);
         }catch(Exception e){System.out.print("El objeto no existe\n");}
     }
-    
+    //Segunda Mejora
      public static void PortabilidadSaldos()
     {
                   
-            PrintStream fichero = null;
-            PrintStream stdout = System.out;
+        PrintStream fichero = null;
+        PrintStream stdout = System.out;
         try {
             fichero = new PrintStream(new File("fichero.txt"));
         } catch (FileNotFoundException ex) {
@@ -521,6 +546,41 @@ public class Main
             System.out.println("Guardado");
          
     }
+     //Tercera Mejora
+     public static void EliminarUsuario()
+    {
+        
+    int idObjeto,idPropietario;    
+     Usuario usuarioAct=null;
+      
+     
+      
+        try{
+            
+            System.out.println("\nIntroduce el numero de usuario: ");   
+            idPropietario = scan.nextInt();           
+                 
+            for (Usuario user : Usuarios)
+            {           
+                
+                    if( user.getIDUsuario() == idPropietario )
+                    {
+                    flag=true;
+                    Usuarios.remove(user);
+                    }
+            }     
+                if(!flag)
+                         throw new Exception("");
+        
+        }catch(InputMismatchException ime){System.out.println("\nDebes introducir un ID válido\n");}
+        catch(Exception e){ System.out.println("El usuario no esta dado de alta");}
+       
+    if (flag)    
+    System.out.println("Usuario eliminado\n");
+    flag=false;
+    }
+     
+     
 }
      
      
