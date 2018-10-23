@@ -52,7 +52,8 @@ public class Main
                                "4. Listar todos los objetos\n" +
                                "5. Baja objeto\n" +
                                "6. Mostrar saldos\n" +
-                               "7. Salir\n");
+                               "7. Salir\n" + 
+                               "8. Modificar Salgo\n" );
            
             try{
                 scan= new Scanner(System.in);
@@ -80,17 +81,18 @@ public class Main
                     break;
                 case 6:
                     MostrarSaldos();
-                    break;
-                
+                    break;                
                 case 7:
                     System.exit(0);
                     break;
-                    
+                 case 9:
+                    ModificarSaldo();
+                    break;   
                 default:
                     System.out.println("La opción elegida no es valida\n");                          
             }
             
-        }while(caso!=7);
+        }while(caso!=8);
     }
       
     
@@ -337,9 +339,9 @@ public class Main
     
     public static GregorianCalendar pedirFechaInicio()
     {
-        Pattern patronDia = Pattern.compile("^[1-31]+$");
-        Pattern patronMes = Pattern.compile("^[1-12]+$");
-        Pattern patronAnyo = Pattern.compile("^(20)[18-99]+$");
+        Pattern patronDia = Pattern.compile("^(([0]?[1-9])|([1-2][0-9])|(3[01]))$");
+        Pattern patronMes = Pattern.compile("^[1-9]|(1[0-2])+$");
+        Pattern patronAnyo = Pattern.compile("^(20)([2-9][0-9]|(1[8,9]))+$");
         Matcher matcher;
         Calendar inicio = null;
         int diaInicio, mesInicio, anyoInicio;
@@ -390,9 +392,9 @@ public class Main
     }
      public static GregorianCalendar pedirFechaFin()
     {
-        Pattern patronDia = Pattern.compile("^[1-31]+$");
-        Pattern patronMes = Pattern.compile("^[1-12]+$");
-        Pattern patronAnyo = Pattern.compile("^(20)[18-99]+$");
+        Pattern patronDia = Pattern.compile("^(([0]?[1-9])|([1-2][0-9])|(3[01]))$");
+        Pattern patronMes = Pattern.compile("^[1-9]|(1[0-2])+$");
+        Pattern patronAnyo = Pattern.compile("^(20)([2-9][0-9]|(1[8,9]))+$");
         Matcher matcher;        
         int diaFin, mesFin, anyoFin;
       
@@ -442,8 +444,58 @@ public class Main
 
     }
      
+    public static void ModificarSaldo()
+    {
+         int idObjeto,idPropietario,coste;
+     Usuario usuarioAct=null;
+
      
-     
-     
-     
+       
+       do
+        try{
+            
+            System.out.println("\nIntroduce el numero de usuario: ");   
+            idPropietario = scan.nextInt();           
+                 
+            for (Usuario user : Usuarios)
+            {           
+                
+                    if( user.getIDUsuario() == idPropietario )
+                    {
+                    flag=true;
+                    usuarioAct=user;
+                    }
+            }     
+                if(!flag)
+                         throw new Exception("");
+        
+        }catch(InputMismatchException ime){System.out.println("\nDebes introducir un ID válido\n"); idPropietario = 0;}
+        catch(Exception e){ System.out.println("El usuario no esta dado de alta");idPropietario = 0;}
+        while(idPropietario==0);
+       
+       
+       
+       
+        do{       
+            System.out.println("\nIntroduce el id del objeto: ");       
+            try{
+            idObjeto = scan.nextInt();
+            }catch(InputMismatchException ime){System.out.println("\nDebes introducir un ID válido\n"); idObjeto = 0;}
+        }while(idObjeto == 0); 
+        
+       do{       
+            System.out.println("\nIntroduce el nuevo coste: ");       
+            try{
+            coste = scan.nextInt();
+            }catch(InputMismatchException ime){System.out.println("\nDebes introducir un ID válido\n"); coste = -1;}
+        }while(coste == -1);
+       
+        try{
+        usuarioAct.modificarCosteObjeto(usuarioAct.devolverObjeto(idObjeto),coste);
+        }catch(Exception e){System.out.print("El objeto no existe\n");}
+    }
+    
 }
+     
+     
+     
