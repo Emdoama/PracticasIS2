@@ -73,6 +73,16 @@ public class Usuario {
            
         }
     }
+    public void mostrarObjetosAlquilables()
+    { 
+        for (int i = 0; i < Objetos.size(); i++) 
+        { 
+            if(Objetos.get(i).isActivo())
+            System.out.println(Objetos.get(i).toString());            
+           
+        }
+    }
+    
      public void mostrarObjetosyAlquileres()
     { 
         for (int i = 0; i < Objetos.size(); i++) 

@@ -47,6 +47,10 @@ public class Objeto {
     {
         Alquileres.add(alquiler);        
     }
+
+    public boolean isActivo() {
+        return activo;
+    }
     
     public void mostrarAlquileres()
     {
