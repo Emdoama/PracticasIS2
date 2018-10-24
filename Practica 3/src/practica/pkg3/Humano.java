@@ -6,14 +6,20 @@
 package practica.pkg3;
 
 import java.io.Serializable;
-import java.util.Calendar;
 
 /**
  *
  * @author Alber
  */
 public class Humano extends ser implements Serializable{
-    Calendar fechaNacimiento = Calendar.getInstance();
+    int fechaNacimiento;
     int velocidad;
+    
+    public Humano(int DIA)
+    {
+        super();
+        fechaNacimiento = DIA;
+    }
+    
 }
 

@@ -29,7 +29,7 @@ public class Entorno implements Serializable{
         primerosHumanos = (int) (Math.random() * primerosHumanos);
         for (int i = 0; i <= 4000 + primerosHumanos; i++)
         {
-            Humano humanoAntecesor = new Humano();
+            Humano humanoAntecesor = new Humano(DIA);
             Humanos.add(humanoAntecesor);
         }
     
