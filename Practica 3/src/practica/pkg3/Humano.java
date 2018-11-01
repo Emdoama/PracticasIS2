@@ -1,24 +1,27 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package practica.pkg3;
 
 import java.io.Serializable;
+import java.util.Random;
 
-/**
- *
- * @author Alber
- */
 public class Humano extends ser implements Serializable{
-    int fechaNacimiento;
+    
     int velocidad;
+    Random ram = new Random(System.currentTimeMillis());
     
     public Humano(int DIA)
     {
-        super();
-        fechaNacimiento = DIA;
+        this.diaNacimiento = DIA;
+        velocidad = (ram.nextInt((100-60+1))+60);
+    }
+
+    @Override
+    public void Nacer() {
+        
+    }
+
+    @Override
+    public void Morir() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     
 }
