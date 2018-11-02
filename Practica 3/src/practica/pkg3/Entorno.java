@@ -80,4 +80,20 @@ public class Entorno implements Serializable{
                 temperatura =  (float)(temperatura - 0.5);
         }
     }
+    
+    public void avanzarDia()
+    {
+        DIA++;
+        /*Si eventoAleatorio*/
+        /*then eventoAleatorio*/
+        /*sino*/
+        modificarTemperatura();
+        
+        /*humanosActuan*/
+        /*cazaVampirosActuan*/
+        /*vampirosActuan*/
+        /*zombiesActuan*/
+        
+        System.out.println("Otro día más...");
+    }
 }
