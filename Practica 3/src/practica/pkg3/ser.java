@@ -10,7 +10,7 @@ import java.io.Serializable;
      * Clases abstractas para los seres
      */
     public abstract void Nacer(int dia, int velocidad);      
-    public abstract void Reproducirse();
+    public abstract void Reproducirse(int cantidad);
     public abstract void Morir();
     
     
