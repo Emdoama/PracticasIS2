@@ -27,6 +27,10 @@ public class Humano extends ser implements Serializable{
     public void Reproducirse(int cantidad) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
+
+    int getVelocidad() {
+        return velocidad;
+    }
     
 }
 

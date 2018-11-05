@@ -1,6 +1,7 @@
 package practica.pkg3;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.Random;
 
@@ -12,7 +13,7 @@ public class Entorno implements Serializable{
     
     static HashSet<Humano> Humanos = new HashSet();
     static HashSet<Cazavampiro> Cazavampiros = new HashSet();
-    static HashSet<Vampiro> Vampiros = new HashSet();
+    static ArrayList<Vampiro> Vampiros = new ArrayList();
     static HashSet<Zombie> Zombies = new HashSet();
     
     
@@ -43,14 +44,14 @@ public class Entorno implements Serializable{
         
         for (int i = 0; i < 15 + (calculoAleatorio(oscilacionVampiros,0)); i++)
         {
-            Vampiro vampiroAntecesor = new Vampiro();
+            Vampiro vampiroAntecesor = new Vampiro(DIA);
             Vampiros.add(vampiroAntecesor);
         }
         
         //Sacar numero aleatorio 'primerosZombies' 10      
         for (int i = 0; i < 20 + (calculoAleatorio(oscilacionZombies,0)); i++)
         {
-            Zombie zombieAntecesor = new Zombie();
+            Zombie zombieAntecesor = new Zombie(DIA);
             Zombies.add(zombieAntecesor);
         }
     }
@@ -92,8 +93,8 @@ public class Entorno implements Serializable{
         
         humanosActuan();
         cazavampirosActuan();
-        /*vampirosActuan*/
-        /*zombiesActuan*/
+        vampirosActuan();
+        zombiesActuan();
         
         System.out.println("Otro día más...");
     }
@@ -168,5 +169,73 @@ public class Entorno implements Serializable{
      {
         return ram.nextInt(hasta-desde+1)+desde;
      }
+
+    private void vampirosActuan() 
+    {
+        boolean ha_comido=true;
+        for(Vampiro vamp: Vampiros)
+        {
+            if(calculoAleatorio(100,0)>=50)
+            {
+                try
+                {
+                    vamp.come();
+                    /*Si come el humano desaparece de los humanos, y puede morir...*/
+                    Humanos.remove(calculoAleatorio(Humanos.size(),0));
+                    /*o ser convertido*/
+                    if(calculoAleatorio(100,0)>=50)
+                        Vampiros.add(new Vampiro(DIA));                
+                }catch(Exception e){ha_comido=false;};
+            }
+            /*Muerte por inanición*/
+            if(ha_comido==false) 
+                Vampiros.remove(vamp);
+        }
+    }
+
+    private void zombiesActuan() 
+    {
+        for(Zombie zomb: Zombies)
+        {
+            if(DIA - zomb.getdiaNacimiento()>=8)
+                Zombies.remove(zomb);
+            else
+            {
+                if(calculoAleatorio(10,1)==1)
+                {
+                    zomb.convierte();
+                    Humanos.remove(getHumanoMasLento());
+                    Zombies.add(new Zombie(DIA));
+                }
+            }
+        }
+        
+    }
+
+    private Object getHumanoMasLento() 
+    {
+        Humano o= new Humano(DIA);
+        int aux=100;
+        
+        for(Humano human: Humanos)
+            
+            if(human.getVelocidad() > aux)
+            {
+                o=human;
+                aux=human.getVelocidad();
+            }    
+            
+        for(Cazavampiro hunter: Cazavampiros)    
+            if(hunter.getVelocidad() > aux)
+            {
+                o=hunter;
+                aux=hunter.getVelocidad();
+            } 
+        
+        return o;
+    }
+    
+    
+
 
 }
