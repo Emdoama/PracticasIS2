@@ -11,9 +11,9 @@ import java.util.Random;
  */
 public class Entorno implements Serializable{
     
-    static HashSet<Humano> Humanos = new HashSet();
+    static ArrayList<Humano> Humanos = new ArrayList();
     static HashSet<Cazavampiro> Cazavampiros = new HashSet();
-    static ArrayList<Vampiro> Vampiros = new ArrayList();
+    static HashSet<Vampiro> Vampiros = new HashSet();
     static HashSet<Zombie> Zombies = new HashSet();
     
     
@@ -129,7 +129,8 @@ public class Entorno implements Serializable{
     
     private boolean consigueCazar() 
     {
-     if(calculoAleatorio(3,1)==1)return true;
+     if(calculoAleatorio(3,1)==1)
+         return true;
      return false;
     }    
     
@@ -185,7 +186,7 @@ public class Entorno implements Serializable{
                     /*o ser convertido*/
                     if(calculoAleatorio(100,0)>=50)
                         Vampiros.add(new Vampiro(DIA));                
-                }catch(Exception e){ha_comido=false;};
+                }catch(Exception e){ha_comido=false;}
             }
             /*Muerte por inanición*/
             if(ha_comido==false) 
@@ -212,7 +213,7 @@ public class Entorno implements Serializable{
         
     }
 
-    private Object getHumanoMasLento() 
+    private Humano getHumanoMasLento() 
     {
         Humano o= new Humano(DIA);
         int aux=100;
