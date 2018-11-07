@@ -39,6 +39,7 @@ public class Entorno implements Serializable{
         for (int i = 0; i < 4000 + (calculoAleatorio(oscilacionHumanos,0)); i++)
         {
             Humano humanoAntecesor = new Humano(DIA,(ram.nextInt((100-60+1))+60));
+            /*ordenar los humanos por la velocidad mayor a menor*/
             Humanos.add(humanoAntecesor);
         }
     
@@ -46,6 +47,7 @@ public class Entorno implements Serializable{
         for (int i = 0; i < 10 + (calculoAleatorio(oscilacionCazavampiros,0)); i++)
         {
             Cazavampiro cazavampirosAntecesor = new Cazavampiro(DIA,(ram.nextInt((100-60+1))+60));
+            /*ordenar los humanos por la velocidad mayor a menor*/
             Cazavampiros.add(cazavampirosAntecesor);
         }
         
@@ -63,6 +65,7 @@ public class Entorno implements Serializable{
             Zombie zombieAntecesor = new Zombie(DIA);
             Zombies.add(zombieAntecesor);
         }
+        
     }
     
     public void modificarTemperatura()
@@ -96,12 +99,12 @@ public class Entorno implements Serializable{
     {
         DIA++;
        
-        /*if (EventoAleatorio)
+        if (EventoAleatorio)
         {
             
-        }else{*/
+        }else{
             modificarTemperatura();
-        //}
+        }
         humanosActuan();
         cazavampirosActuan();
         vampirosActuan();
