@@ -24,6 +24,8 @@ public class Entorno implements Serializable{
     private int prob_muerte_cat=300;
     private int prob_cazar= 3;
      
+    boolean EventoAleatorio=false;
+    
     private float temperatura = 20;   
     private int DIA = 1;
     Random ram = new Random(System.currentTimeMillis());
@@ -93,11 +95,13 @@ public class Entorno implements Serializable{
     public void avanzarDia()
     {
         DIA++;
-        /*Si eventoAleatorio*/
-        /*then eventoAleatorio*/
-        /*sino si */
-        modificarTemperatura();
-        
+       
+        /*if (EventoAleatorio)
+        {
+            
+        }else{*/
+            modificarTemperatura();
+        //}
         humanosActuan();
         cazavampirosActuan();
         vampirosActuan();
