@@ -7,10 +7,22 @@ import java.io.Serializable;
      int velocidad;
     
     /**
-     * Clases abstractas para los seres
+     * 
+     * @param dia
+     * @param velocidad
      */
-    public abstract void Nacer(int dia, int velocidad);      
-    public abstract void Reproducirse(int cantidad);
+    public abstract void Nacer(int dia, int velocidad);   
+    
+    /**
+     * 
+     * @param cantidad
+     * @param dia
+     */
+    public abstract void Reproducirse(int cantidad,int dia);
+    
+    /**
+     * 
+     */
     public abstract void Morir();
     
     

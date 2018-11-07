@@ -4,18 +4,17 @@ import java.io.Serializable;
 import java.util.Random;
 
 public class Humano extends ser implements Serializable{
-      
-    Random ram = new Random(System.currentTimeMillis());
-    
-    public Humano(int DIA)
+ 
+    public Humano(int DIA, int velocidad)
     {
         this.diaNacimiento = DIA;
-        this.velocidad = (ram.nextInt((100-60+1))+60);
+        this.velocidad = velocidad;
     }
-
+    
+    
     @Override
     public void Nacer(int dia, int velocidad) {
-        
+        Entorno.Humanos.add(new Humano(dia, velocidad));
     }
 
     @Override
@@ -24,8 +23,14 @@ public class Humano extends ser implements Serializable{
     }
 
     @Override
-    public void Reproducirse(int cantidad) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public void Reproducirse(int cantidad, int dia) 
+    {
+        for (int i=1 ; i<=cantidad; i++)
+        {
+            this.Nacer(dia, velocidad);
+        }
+            
+            
     }
 
     int getVelocidad() {

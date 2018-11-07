@@ -8,12 +8,15 @@ import java.io.Serializable;
  */
 public class Cazavampiro extends Humano implements Serializable {
     int cazados;
-    public Cazavampiro(int DIA) {
-        super(DIA);
+   
+    public Cazavampiro(int DIA, int velocidad) {
+        super(DIA, velocidad);
+        cazados=0;
+        
     }
 
     void caza() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+       cazados++; 
     }
   
     
