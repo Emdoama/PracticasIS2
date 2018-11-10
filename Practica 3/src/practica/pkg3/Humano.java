@@ -2,8 +2,6 @@ package practica.pkg3;
 import java.io.Serializable;
 
 public class Humano extends ser implements Serializable{
- 
-    
     public Humano(int DIA, int velocidad)
     {
         this.diaNacimiento = DIA;
@@ -11,11 +9,29 @@ public class Humano extends ser implements Serializable{
     }
     @Override
     public void Nacer(int dia, int velocidad) {
-        Entorno.Humanos.add(new Humano(dia, velocidad));
+        
+        Humano humano = new Humano(dia, velocidad);
+        boolean insertado = false;
+        int i = Entorno.Humanos.size();
+        
+        
+        // Posiciones | 1  2 3 4 5 6
+        // Valores    | 5 10 8 5 2 1
+        do
+        {
+            if (velocidad < Entorno.Humanos.get(i).getVelocidad())
+            {
+                Entorno.Humanos.add(i+1, humano);
+                insertado = true;
+            }
+            else
+                i--;
+        }while(insertado != true);
     }
+    
     @Override
     public void Morir() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        Entorno.Humanos.remove(Probabilidades.calculoAleatorio(0, Entorno.Humanos.size()));
     }
     @Override
     public void Reproducirse(int cantidad, int dia) 
