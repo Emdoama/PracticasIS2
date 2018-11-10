@@ -13,12 +13,14 @@ public class Entorno implements Serializable{
     static HashSet<Zombie> Zombies = new HashSet();
     Probabilidades probabilidades = new Probabilidades();
     boolean EventoAleatorio=false;
-    
     private float temperatura = 20;   
     private int DIA = 1;
+    
     Random ram = new Random(System.currentTimeMillis());
     
 
+    Humano humano; // Necesario para poder usar la funcion nacer. Averiguar por que.
+    
     void CrearEntorno()
     {
         int oscilacionHumanos = 2000, oscilacionCazavampiros = 5, oscilacionVampiros = 5, oscilacionZombies = 10;
@@ -26,9 +28,7 @@ public class Entorno implements Serializable{
         //Sacar numero aleatorio 'oscilacionHumanos 2000'       
         for (int i = 0; i < 4000 + (probabilidades.calculoAleatorio(oscilacionHumanos,0)); i++)
         {
-            Humano humanoAntecesor = new Humano(DIA,(ram.nextInt((100-60+1))+60));
-            /*ordenar los humanos por la velocidad mayor a menor*/
-            Humanos.add(humanoAntecesor);
+            humano.Nacer(DIA,(ram.nextInt((100-60+1))+60));
         }
     
         //Sacar numero aleatorio 'oscilacionCazavampiros 5'        
@@ -79,7 +79,7 @@ public class Entorno implements Serializable{
         for(Humano human: Humanos)
         {            
            if(probabilidades.reproduceHumano(temperatura))
-               human.Reproducirse(probabilidades.calculoAleatorio(3,1),DIA);
+               human.Reproducirse(probabilidades.calculoAleatorio(3,1), DIA);
            if(muerteHumano())
                human.Morir();                     
         }     

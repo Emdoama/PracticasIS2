@@ -14,9 +14,6 @@ public class Humano extends ser implements Serializable{
         boolean insertado = false;
         int i = Entorno.Humanos.size();
         
-        
-        // Posiciones | 1  2 3 4 5 6
-        // Valores    | 5 10 8 5 2 1
         do
         {
             if (velocidad < Entorno.Humanos.get(i).getVelocidad())
@@ -36,7 +33,7 @@ public class Humano extends ser implements Serializable{
     @Override
     public void Reproducirse(int cantidad, int dia) 
     {
-        for (int i=1 ; i<=cantidad; i++)
+        for (int i=1 ; i <= cantidad; i++)
         {
             this.Nacer(dia, velocidad);
         }       
