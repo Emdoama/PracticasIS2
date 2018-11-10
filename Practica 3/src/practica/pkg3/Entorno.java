@@ -226,7 +226,6 @@ public class Entorno implements Serializable{
                 }
             }
         }
-        
     }
 
     private Humano getHumanoMasLento() 

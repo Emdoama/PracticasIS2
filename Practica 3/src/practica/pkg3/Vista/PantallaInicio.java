@@ -29,27 +29,27 @@ public class PantallaInicio extends javax.swing.JFrame {
 
         buttonGroup1 = new javax.swing.ButtonGroup();
         jLabel1 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        botonCargarEntornoAnterior = new javax.swing.JButton();
+        botonCrearNuevoEntorno = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jLabel1.setFont(new java.awt.Font("Georgia", 1, 24)); // NOI18N
         jLabel1.setText("Pantalla de inicio");
 
-        jButton1.setFont(new java.awt.Font("Georgia", 3, 14)); // NOI18N
-        jButton1.setText("Cargar entorno anterior");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        botonCargarEntornoAnterior.setFont(new java.awt.Font("Georgia", 3, 14)); // NOI18N
+        botonCargarEntornoAnterior.setText("Cargar entorno anterior");
+        botonCargarEntornoAnterior.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                botonCargarEntornoAnteriorPulsado(evt);
             }
         });
 
-        jButton2.setFont(new java.awt.Font("Georgia", 3, 14)); // NOI18N
-        jButton2.setText("Crear nuevo entorno");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        botonCrearNuevoEntorno.setFont(new java.awt.Font("Georgia", 3, 14)); // NOI18N
+        botonCrearNuevoEntorno.setText("Crear nuevo entorno");
+        botonCrearNuevoEntorno.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                botonCrearNuevoEntornoPulsado(evt);
             }
         });
 
@@ -61,8 +61,8 @@ public class PantallaInicio extends javax.swing.JFrame {
                 .addGap(139, 139, 139)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                     .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jButton2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jButton1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(botonCrearNuevoEntorno, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(botonCargarEntornoAnterior, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap(168, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -71,22 +71,22 @@ public class PantallaInicio extends javax.swing.JFrame {
                 .addGap(49, 49, 49)
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(47, 47, 47)
-                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(botonCrearNuevoEntorno, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(76, 76, 76)
-                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(botonCargarEntornoAnterior, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(107, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void botonCargarEntornoAnteriorPulsado(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonCargarEntornoAnteriorPulsado
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_botonCargarEntornoAnteriorPulsado
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void botonCrearNuevoEntornoPulsado(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonCrearNuevoEntornoPulsado
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton2ActionPerformed
+    }//GEN-LAST:event_botonCrearNuevoEntornoPulsado
 
     /**
      * @param args the command line arguments
@@ -127,9 +127,9 @@ public class PantallaInicio extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton botonCargarEntornoAnterior;
+    private javax.swing.JButton botonCrearNuevoEntorno;
     private javax.swing.ButtonGroup buttonGroup1;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     // End of variables declaration//GEN-END:variables
 }

@@ -19,10 +19,10 @@
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace min="-2" pref="39" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                  <Component id="jButton2" max="32767" attributes="0"/>
-                  <Component id="jButton1" max="32767" attributes="0"/>
-                  <Component id="jButton3" alignment="1" pref="200" max="32767" attributes="0"/>
-                  <Component id="jButton4" alignment="0" pref="200" max="32767" attributes="0"/>
+                  <Component id="botonCalentamientoGlobal" max="32767" attributes="0"/>
+                  <Component id="botonAvanzarDia" max="32767" attributes="0"/>
+                  <Component id="botonIvasionZombie" alignment="1" pref="200" max="32767" attributes="0"/>
+                  <Component id="botonEnfriamientoGlobal" alignment="0" pref="200" max="32767" attributes="0"/>
               </Group>
               <EmptySpace pref="281" max="32767" attributes="0"/>
           </Group>
@@ -32,20 +32,20 @@
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace min="-2" pref="64" max="-2" attributes="0"/>
-              <Component id="jButton1" min="-2" pref="35" max="-2" attributes="0"/>
+              <Component id="botonAvanzarDia" min="-2" pref="35" max="-2" attributes="0"/>
               <EmptySpace min="-2" pref="37" max="-2" attributes="0"/>
-              <Component id="jButton2" min="-2" pref="35" max="-2" attributes="0"/>
+              <Component id="botonCalentamientoGlobal" min="-2" pref="35" max="-2" attributes="0"/>
               <EmptySpace min="-2" pref="36" max="-2" attributes="0"/>
-              <Component id="jButton4" min="-2" pref="35" max="-2" attributes="0"/>
+              <Component id="botonEnfriamientoGlobal" min="-2" pref="35" max="-2" attributes="0"/>
               <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
-              <Component id="jButton3" min="-2" pref="35" max="-2" attributes="0"/>
+              <Component id="botonIvasionZombie" min="-2" pref="35" max="-2" attributes="0"/>
               <EmptySpace pref="90" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
   </Layout>
   <SubComponents>
-    <Component class="javax.swing.JButton" name="jButton1">
+    <Component class="javax.swing.JButton" name="botonAvanzarDia">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Georgia" size="14" style="1"/>
@@ -53,10 +53,10 @@
         <Property name="text" type="java.lang.String" value="Avanzar dia"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton1ActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BotonAvanzarDiaPulsado"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JButton" name="jButton2">
+    <Component class="javax.swing.JButton" name="botonCalentamientoGlobal">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Georgia" size="14" style="1"/>
@@ -64,10 +64,10 @@
         <Property name="text" type="java.lang.String" value="Calentamiento global"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton2ActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="botonCalentamientoGlobalPulsado"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JButton" name="jButton3">
+    <Component class="javax.swing.JButton" name="botonIvasionZombie">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Georgia" size="14" style="1"/>
@@ -75,10 +75,10 @@
         <Property name="text" type="java.lang.String" value="Invasion zombie"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton3ActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="botonInvasionZombiePulsado"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JButton" name="jButton4">
+    <Component class="javax.swing.JButton" name="botonEnfriamientoGlobal">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Georgia" size="14" style="1"/>
@@ -86,7 +86,7 @@
         <Property name="text" type="java.lang.String" value="Enfriamento global"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton4ActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="botonEnfriamientoGlobalPulsado"/>
       </Events>
     </Component>
   </SubComponents>

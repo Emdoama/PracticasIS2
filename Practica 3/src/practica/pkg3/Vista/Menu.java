@@ -27,40 +27,40 @@ public class Menu extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
+        botonAvanzarDia = new javax.swing.JButton();
+        botonCalentamientoGlobal = new javax.swing.JButton();
+        botonIvasionZombie = new javax.swing.JButton();
+        botonEnfriamientoGlobal = new javax.swing.JButton();
 
-        jButton1.setFont(new java.awt.Font("Georgia", 1, 14)); // NOI18N
-        jButton1.setText("Avanzar dia");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        botonAvanzarDia.setFont(new java.awt.Font("Georgia", 1, 14)); // NOI18N
+        botonAvanzarDia.setText("Avanzar dia");
+        botonAvanzarDia.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                BotonAvanzarDiaPulsado(evt);
             }
         });
 
-        jButton2.setFont(new java.awt.Font("Georgia", 1, 14)); // NOI18N
-        jButton2.setText("Calentamiento global");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        botonCalentamientoGlobal.setFont(new java.awt.Font("Georgia", 1, 14)); // NOI18N
+        botonCalentamientoGlobal.setText("Calentamiento global");
+        botonCalentamientoGlobal.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                botonCalentamientoGlobalPulsado(evt);
             }
         });
 
-        jButton3.setFont(new java.awt.Font("Georgia", 1, 14)); // NOI18N
-        jButton3.setText("Invasion zombie");
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
+        botonIvasionZombie.setFont(new java.awt.Font("Georgia", 1, 14)); // NOI18N
+        botonIvasionZombie.setText("Invasion zombie");
+        botonIvasionZombie.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
+                botonInvasionZombiePulsado(evt);
             }
         });
 
-        jButton4.setFont(new java.awt.Font("Georgia", 1, 14)); // NOI18N
-        jButton4.setText("Enfriamento global");
-        jButton4.addActionListener(new java.awt.event.ActionListener() {
+        botonEnfriamientoGlobal.setFont(new java.awt.Font("Georgia", 1, 14)); // NOI18N
+        botonEnfriamientoGlobal.setText("Enfriamento global");
+        botonEnfriamientoGlobal.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton4ActionPerformed(evt);
+                botonEnfriamientoGlobalPulsado(evt);
             }
         });
 
@@ -71,48 +71,48 @@ public class Menu extends javax.swing.JPanel {
             .addGroup(layout.createSequentialGroup()
                 .addGap(39, 39, 39)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jButton3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE)
-                    .addComponent(jButton4, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE))
+                    .addComponent(botonCalentamientoGlobal, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(botonAvanzarDia, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(botonIvasionZombie, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE)
+                    .addComponent(botonEnfriamientoGlobal, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE))
                 .addContainerGap(281, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(64, 64, 64)
-                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(botonAvanzarDia, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(37, 37, 37)
-                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(botonCalentamientoGlobal, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(36, 36, 36)
-                .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(botonEnfriamientoGlobal, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(33, 33, 33)
-                .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(botonIvasionZombie, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(90, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void BotonAvanzarDiaPulsado(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonAvanzarDiaPulsado
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_BotonAvanzarDiaPulsado
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void botonCalentamientoGlobalPulsado(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonCalentamientoGlobalPulsado
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton2ActionPerformed
+    }//GEN-LAST:event_botonCalentamientoGlobalPulsado
 
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+    private void botonInvasionZombiePulsado(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonInvasionZombiePulsado
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton3ActionPerformed
+    }//GEN-LAST:event_botonInvasionZombiePulsado
 
-    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+    private void botonEnfriamientoGlobalPulsado(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonEnfriamientoGlobalPulsado
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton4ActionPerformed
+    }//GEN-LAST:event_botonEnfriamientoGlobalPulsado
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
+    private javax.swing.JButton botonAvanzarDia;
+    private javax.swing.JButton botonCalentamientoGlobal;
+    private javax.swing.JButton botonEnfriamientoGlobal;
+    private javax.swing.JButton botonIvasionZombie;
     // End of variables declaration//GEN-END:variables
 }
