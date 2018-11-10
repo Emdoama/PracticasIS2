@@ -1,9 +1,9 @@
 package practica.pkg3;
-
 import java.io.Serializable;
 
 public class Humano extends ser implements Serializable{
  
+    
     public Humano(int DIA, int velocidad)
     {
         this.diaNacimiento = DIA;
