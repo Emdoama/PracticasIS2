@@ -35,6 +35,8 @@ public class PantallaPrincipal extends javax.swing.JFrame {
         BotonEnfriamientoGlobal = new javax.swing.JButton();
         BotonInvasionZombie = new javax.swing.JButton();
         ZonaTexto = new javax.swing.JPanel();
+        BotonAvanzar10Dias = new javax.swing.JButton();
+        BotonSalir = new javax.swing.JButton();
         jMenuBar1 = new javax.swing.JMenuBar();
         MenuItemArchivo = new javax.swing.JMenu();
         MenuItemCrearEntorno = new javax.swing.JMenuItem();
@@ -56,6 +58,11 @@ public class PantallaPrincipal extends javax.swing.JFrame {
         });
 
         BotonAvanzarDia.setText("Avanzar dia");
+        BotonAvanzarDia.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BotonAvanzarDiaActionPerformed(evt);
+            }
+        });
 
         BotonCalentamientoGlobal.setText("Calentamiento global");
 
@@ -78,6 +85,10 @@ public class PantallaPrincipal extends javax.swing.JFrame {
             ZonaTextoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 272, Short.MAX_VALUE)
         );
+
+        BotonAvanzar10Dias.setText("Avanzar 10 dias");
+
+        BotonSalir.setText("Salir");
 
         MenuItemArchivo.setText("Archivo");
 
@@ -122,7 +133,9 @@ public class PantallaPrincipal extends javax.swing.JFrame {
                     .addComponent(BotonCalentamientoGlobal, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(BotonAvanzarDia, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(BotonEnfriamientoGlobal, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(BotonInvasionZombie, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(BotonInvasionZombie, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(BotonAvanzar10Dias, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(BotonSalir, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 84, Short.MAX_VALUE)
                 .addComponent(ZonaTexto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(26, 26, 26))
@@ -130,15 +143,19 @@ public class PantallaPrincipal extends javax.swing.JFrame {
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(73, 73, 73)
+                .addGap(56, 56, 56)
                 .addComponent(BotonAvanzarDia)
                 .addGap(18, 18, 18)
+                .addComponent(BotonAvanzar10Dias)
+                .addGap(18, 18, 18)
                 .addComponent(BotonCalentamientoGlobal)
-                .addGap(45, 45, 45)
+                .addGap(18, 18, 18)
                 .addComponent(BotonEnfriamientoGlobal)
                 .addGap(18, 18, 18)
                 .addComponent(BotonInvasionZombie)
-                .addGap(87, 87, 87))
+                .addGap(18, 18, 18)
+                .addComponent(BotonSalir)
+                .addGap(38, 38, 38))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(ZonaTexto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -159,6 +176,10 @@ public class PantallaPrincipal extends javax.swing.JFrame {
     private void formComponentHidden(java.awt.event.ComponentEvent evt) {//GEN-FIRST:event_formComponentHidden
         // TODO add your handling code here:
     }//GEN-LAST:event_formComponentHidden
+
+    private void BotonAvanzarDiaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonAvanzarDiaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_BotonAvanzarDiaActionPerformed
 
     /**
      * @param args the command line arguments
@@ -203,10 +224,12 @@ public class PantallaPrincipal extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton BotonAvanzar10Dias;
     private javax.swing.JToggleButton BotonAvanzarDia;
     private javax.swing.JButton BotonCalentamientoGlobal;
     private javax.swing.JButton BotonEnfriamientoGlobal;
     private javax.swing.JButton BotonInvasionZombie;
+    private javax.swing.JButton BotonSalir;
     private javax.swing.JMenu MenuDetalles;
     private javax.swing.JMenu MenuItemArchivo;
     private javax.swing.JMenuItem MenuItemCargarEntorno;

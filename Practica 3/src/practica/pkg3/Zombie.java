@@ -3,22 +3,20 @@ package practica.pkg3;
 import java.io.Serializable;
 
 public class Zombie implements Serializable{
-    private int cantidad;
+    private int cantidadHumanosConvertidos;
     private int diaNacimiento;
 
     Zombie(int dia) {
-       diaNacimiento=dia;
+       diaNacimiento = dia;
+       cantidadHumanosConvertidos = 0;
     }
-   void convierte() 
+    public void convierte() 
     {
-        cantidad++;
+        cantidadHumanosConvertidos++;
     }
-   
     int getdiaNacimiento() 
     {
         return diaNacimiento;
     }
-
-  
     
 }

@@ -4,15 +4,22 @@ import java.io.Serializable;
     
 
 public class Vampiro implements Serializable{
-    int cantidad;
+    int cantidadHumanosConvertidos;
     int diaNacimiento;
     public Vampiro(int dia)
     {
-        cantidad=0;
+        cantidadHumanosConvertidos = 0;
         diaNacimiento=dia;
     }
-    void come() {
-        cantidad++;
+    boolean Come() {
+        boolean haComido = false;
+        if (!Entorno.Humanos.isEmpty())    
+        {
+            cantidadHumanosConvertidos++;
+            haComido = true;
+            Entorno.Humanos.get(Probabilidades.calculoAleatorio(1, Entorno.Humanos.size())).Morir();
+        }
+        return haComido;
     }
 
   
