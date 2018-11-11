@@ -122,7 +122,7 @@ public class Entorno implements Serializable{
     
     private void vampirosActuan() 
     {
-        boolean ha_comido = true;
+        boolean ha_comido = false;
         for(Vampiro vamp : Vampiros)
         {
             if(probabilidades.calculoAleatorio(100,0) >= probabilidades.getProb_comer_vamp())
@@ -136,6 +136,7 @@ public class Entorno implements Serializable{
                         Vampiros.add(new Vampiro(DIA));
                 }catch(Exception e){ha_comido = false;}
             }
+            
             /*Muerte por inanición*/
             if(ha_comido == false) 
                 Vampiros.remove(vamp);
@@ -155,7 +156,7 @@ public class Entorno implements Serializable{
                 if(probabilidades.calculoAleatorio(probabilidades.getProb_conv_zomb(), 1) == 1)
                 {
                     zomb.convierte();
-                    MatarHumano(); //Mata al ultimo del array, el cual es el mas lento
+                    ZombieMata(); //Mata al ultimo del array, el cual es el mas lento
                     Zombies.add(new Zombie(DIA));
                 }
             }
@@ -192,8 +193,22 @@ public class Entorno implements Serializable{
         return o;
     }*/
     
-    private void MatarHumano ()
+    private void ZombieMata ()
     {
-        Humanos.remove(Humanos.size());
+        if(!Humanos.isEmpty() && !Cazavampiros.isEmpty()) //Si no hay ningun grupo extinguido
+        {
+            if( Humanos.get(Humanos.size()).getVelocidad() <= Cazavampiros.get(Cazavampiros.size()).getVelocidad() )
+            {
+                Humanos.remove(Humanos.size());
+            }
+            else if ( Humanos.get(Humanos.size()).getVelocidad() > Cazavampiros.get(Cazavampiros.size()).getVelocidad() )
+            {
+                Cazavampiros.remove(Cazavampiros.size());
+            }
+        }
+        else if (Humanos.isEmpty())
+            Cazavampiros.remove(Cazavampiros.size());
+        else if (Cazavampiros.isEmpty())
+            Humanos.remove(Humanos.size());
     }
 }
