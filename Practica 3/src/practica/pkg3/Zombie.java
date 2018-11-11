@@ -18,5 +18,10 @@ public class Zombie implements Serializable{
     {
         return diaNacimiento;
     }
+    @Override
+    public String toString()
+    {
+        return "";
+    }
     
 }

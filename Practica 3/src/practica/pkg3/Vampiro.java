@@ -21,7 +21,9 @@ public class Vampiro implements Serializable{
         }
         return haComido;
     }
-
-  
-    
+    @Override
+    public String toString()
+    {
+        return "";
+    }
 }

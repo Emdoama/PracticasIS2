@@ -41,5 +41,10 @@ public class Humano extends ser implements Serializable{
     int getVelocidad() {
         return velocidad;
     }
+    @Override
+    public String toString()
+    {
+        return "";
+    }
 }
 

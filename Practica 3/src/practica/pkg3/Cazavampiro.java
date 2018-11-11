@@ -35,6 +35,9 @@ public class Cazavampiro extends Humano implements Serializable {
     void caza() {
        cantidadVampirosCazados++; 
     }
-  
-    
+    @Override
+    public String toString()
+    {
+        return "";
+    }
 }

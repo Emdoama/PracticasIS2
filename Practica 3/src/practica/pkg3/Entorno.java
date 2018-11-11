@@ -90,15 +90,15 @@ public class Entorno implements Serializable{
     {
         for(Cazavampiro hunter : Cazavampiros)
         {            
-           if(probabilidades.reproduceHumano(temperatura))
-               hunter.Reproducirse(probabilidades.calculoAleatorio(3,1), DIA);           
-           if(MuerteHumano())
-               hunter.Morir();
-           if(ConsigueCazar())
-           {
-               hunter.caza();
+            if(probabilidades.reproduceHumano(temperatura))
+                hunter.Reproducirse(probabilidades.calculoAleatorio(3,1), DIA);           
+            if(MuerteHumano())
+                hunter.Morir();
+            if(ConsigueCazar())
+            {
+                hunter.caza();
                Vampiros.remove(Vampiros.size()-1);
-           }
+            }
         }
     }
     
@@ -188,5 +188,31 @@ public class Entorno implements Serializable{
         {
             AvanzarDia();            
         }
+    }
+    private void Glaciacion()
+    {
+        temperatura = temperatura - 10;
+    }
+    private void CalentamientoGlobal()
+    {
+        temperatura = temperatura + 10;
+    }
+    private void InvasionZombie()
+    {
+        probabilidades.setProb_conv_zomb(3);
+    }
+    public void DetallesDiaActual()
+    {
+        this.toString();
+    }
+    @Override
+    public String toString()
+    {
+        return  "\nDIA: " + DIA + 
+                "\nTemperatura actual: " + temperatura +
+                "\nHumanos: " + Humanos.size() +
+                "\nCazavampiros: " + Cazavampiros.size() +
+                "\nVampiros: " + Vampiros.size() +
+                "\nZombie: " + Zombies.size()+"\n";
     }
 }
