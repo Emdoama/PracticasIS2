@@ -54,7 +54,7 @@ public class Entorno implements Serializable{
         }
     }
     
-    public void avanzarDia()
+    public void AvanzarDia()
     {
         DIA++;
        
@@ -65,36 +65,36 @@ public class Entorno implements Serializable{
             temperatura = probabilidades.modificarTemperatura(temperatura);
         }
         if(!Humanos.isEmpty())
-            humanosActuan();
+            HumanosActuan();
         if(!Cazavampiros.isEmpty())
-            cazavampirosActuan();
+            CazavampirosActuan();
         if(!Vampiros.isEmpty())
-            vampirosActuan();
+            VampirosActuan();
         if(!Zombies.isEmpty())
-            zombiesActuan();
+            ZombiesActuan();
         
         System.out.println("Otro día más...");
     }
-    public void humanosActuan()
+    public void HumanosActuan()
     {    
         for(Humano human: Humanos)
         {            
            if(probabilidades.reproduceHumano(temperatura))
                human.Reproducirse(probabilidades.calculoAleatorio(3,1), DIA);
-           if(muerteHumano())
+           if(MuerteHumano())
                human.Morir();                     
         }     
     }
     
-    public void cazavampirosActuan()
+    public void CazavampirosActuan()
     {
         for(Cazavampiro hunter : Cazavampiros)
         {            
            if(probabilidades.reproduceHumano(temperatura))
                hunter.Reproducirse(probabilidades.calculoAleatorio(3,1), DIA);           
-           if(muerteHumano())
+           if(MuerteHumano())
                hunter.Morir();
-           if(consigueCazar())
+           if(ConsigueCazar())
            {
                hunter.caza();
                Vampiros.remove(Vampiros.size()-1);
@@ -102,13 +102,13 @@ public class Entorno implements Serializable{
         }
     }
     
-    private boolean consigueCazar() 
+    private boolean ConsigueCazar() 
     {
      if(probabilidades.calculoAleatorio(probabilidades.getProb_cazar(), 1) == 1)
          return true;
      return false;
     }
-    public boolean muerteHumano()
+    public boolean MuerteHumano()
     {
         /*Muerte natural*/
         if(probabilidades.calculoAleatorio(probabilidades.getProb_muerte_nat(), 1) == 1)
@@ -120,7 +120,7 @@ public class Entorno implements Serializable{
         return false;
     }
     
-    private void vampirosActuan() 
+    private void VampirosActuan() 
     {
         boolean ha_comido = false;
         for(Vampiro vamp : Vampiros)
@@ -145,7 +145,7 @@ public class Entorno implements Serializable{
         }
     }
 
-    private void zombiesActuan() 
+    private void ZombiesActuan() 
     {
         for(Zombie zomb: Zombies)
         {
@@ -162,36 +162,6 @@ public class Entorno implements Serializable{
             }
         }
     }
-    /*
-        Mantiene la coleccion de Humanos ordenadas, donde el ultimo es el mas lento.
-    */
-    /*private void OrdenarHumanosVelocidad()
-    {
-        Humanos.add(e)
-    }*/
-    /*private Humano getHumanoMasLento() 
-    {
-        Humano o= new Humano(DIA,0);
-        int aux=100;
-        
-        
-        for(Humano human: Humanos)
-            
-            if(human.getVelocidad() < aux)
-            {
-                o=human;
-                aux=human.getVelocidad();
-            }    
-            
-        for(Cazavampiro hunter: Cazavampiros)    
-            if(hunter.getVelocidad() < aux)
-            {
-                o=hunter;
-                aux=hunter.getVelocidad();
-            } 
-        
-        return o;
-    }*/
     
     private void ZombieMata ()
     {
@@ -210,5 +180,13 @@ public class Entorno implements Serializable{
             Cazavampiros.remove(Cazavampiros.size());
         else if (Cazavampiros.isEmpty())
             Humanos.remove(Humanos.size());
+    }
+    
+    private void Avanzar10Dias()
+    {
+        for(int i = 0; i < 10; i++)
+        {
+            AvanzarDia();            
+        }
     }
 }
