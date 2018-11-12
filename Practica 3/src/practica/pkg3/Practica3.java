@@ -10,29 +10,39 @@ import java.io.ObjectOutputStream;
 import java.io.Serializable;
 
 public class Practica3 implements Serializable{
+    Entorno entorno;
     
-    public static void main(String[] args) throws IOException, ClassNotFoundException {
+    public Entorno getEntorno() {
+        return entorno;
+    }
 
-        ByteArrayInputStream bs;
+    public void setEntorno(Entorno entorno) {
+        this.entorno = entorno;
+    }
+    public Entorno crearEntorno()
+    {
+       return new Entorno();
+    }  
+    public Practica3(){
+
+        
         ObjectInputStream is;
-        FileInputStream entrada;
-        Entorno entorno;
+            
         
         try
-        {
-            entrada = new FileInputStream("Entorno.dat");
-            is = new ObjectInputStream(entrada);
+        {            
+            is = new ObjectInputStream(new FileInputStream("Entorno.dat"));
             entorno = (Entorno)is.readObject();
             is.close();
-        }catch (FileNotFoundException e){entorno = new Entorno(); entorno.CrearEntorno();}
+        }catch (IOException | ClassNotFoundException e){entorno = new Entorno();}
     }
     
-    void GuardarEstado(Entorno entorno) throws IOException
-    {
-        FileOutputStream salida = new FileOutputStream("Entorno.dat");
-        try (ObjectOutputStream os = new ObjectOutputStream (salida)) 
+    public void GuardarEstado(Entorno entorno) 
+    {       
+        try (ObjectOutputStream os = new ObjectOutputStream (new FileOutputStream("Entorno.dat"))) 
         {
             os.writeObject(entorno);  
-        }
+        }catch(Exception e){System.out.println("No se ha podido guardar el entorno.");}
     }
+    
 }

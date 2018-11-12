@@ -11,8 +11,8 @@ public class Vampiro implements Serializable{
         cantidadHumanosConvertidos = 0;
         diaNacimiento=dia;
     }
-    boolean Come() {
-        boolean haComido = false;
+    boolean Come(boolean haComido) {
+        
         if (!Entorno.Humanos.isEmpty())    
         {
             cantidadHumanosConvertidos++;

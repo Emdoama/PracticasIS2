@@ -22,7 +22,7 @@ public class Entorno implements Serializable{
     Humano humano; // Necesario para poder usar la funcion nacer. Averiguar por que.
     Cazavampiro cazavampiros;// Necesario para poder usar la funcion nacer. Averiguar por que.
     
-    void CrearEntorno()
+    public Entorno()
     {
         int oscilacionHumanos = 2000, oscilacionCazavampiros = 5, oscilacionVampiros = 5, oscilacionZombies = 10;
         
@@ -56,14 +56,10 @@ public class Entorno implements Serializable{
     
     public void AvanzarDia()
     {
-        DIA++;
-       
-        if (EventoAleatorio)
-        {
-            
-        }else{
-            temperatura = probabilidades.modificarTemperatura(temperatura);
-        }
+        DIA++;      
+        
+        temperatura = probabilidades.modificarTemperatura(temperatura);
+        
         if(!Humanos.isEmpty())
             HumanosActuan();
         if(!Cazavampiros.isEmpty())
@@ -122,26 +118,24 @@ public class Entorno implements Serializable{
     
     private void VampirosActuan() 
     {
-        boolean ha_comido = false;
+        boolean haComido = false;
         for(Vampiro vamp : Vampiros)
         {
             if(probabilidades.calculoAleatorio(100,0) >= probabilidades.getProb_comer_vamp())
             {
-                try
-                {
-                    ha_comido = vamp.Come();
-
-                    /*o ser convertido*/
-                    if(probabilidades.calculoAleatorio(100, 0) >= probabilidades.getProb_conv_vamp())
-                        Vampiros.add(new Vampiro(DIA));
-                }catch(Exception e){ha_comido = false;}
+                /*El vampiro come de un humano y puede morir..*/
+                haComido = vamp.Come(haComido);                    
+                /*o ser convertido*/
+                if(probabilidades.calculoAleatorio(100, 0) >= probabilidades.getProb_conv_vamp())
+                    Vampiros.add(new Vampiro(DIA));                
+                /*Muerte por inanición*/
+               if(haComido == false) 
+                   Vampiros.remove(vamp);
+               if(Vampiros.isEmpty())
+                   System.out.print("Los vampiros se han extinguido.");
             }
             
-            /*Muerte por inanición*/
-            if(ha_comido == false) 
-                Vampiros.remove(vamp);
-            if(Vampiros.isEmpty())
-                System.out.print("Los vampiros se han extinguido.");
+           
         }
     }
 
@@ -182,22 +176,22 @@ public class Entorno implements Serializable{
             Humanos.remove(Humanos.size());
     }
     
-    private void Avanzar10Dias()
+    public void Avanzar10Dias()
     {
         for(int i = 0; i < 10; i++)
         {
             AvanzarDia();            
         }
     }
-    private void Glaciacion()
+    public void Glaciacion()
     {
         temperatura = temperatura - 10;
     }
-    private void CalentamientoGlobal()
+    public void CalentamientoGlobal()
     {
         temperatura = temperatura + 10;
     }
-    private void InvasionZombie()
+    public void InvasionZombie()
     {
         probabilidades.setProb_conv_zomb(3);
     }

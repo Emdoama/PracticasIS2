@@ -5,17 +5,20 @@
  */
 package practica.pkg3.Vista;
 
+import practica.pkg3.Practica3;
+
 /**
  *
  * @author Alber
  */
 public class PantallaPrincipal extends javax.swing.JFrame {
-
+   Practica3 model;
     /**
      * Creates new form Vista1
      */
     public PantallaPrincipal() {
         initComponents();
+        model = new Practica3();
     }
 
     /**
@@ -40,7 +43,7 @@ public class PantallaPrincipal extends javax.swing.JFrame {
         jMenuBar1 = new javax.swing.JMenuBar();
         MenuItemArchivo = new javax.swing.JMenu();
         MenuItemCrearEntorno = new javax.swing.JMenuItem();
-        MenuItemCargarEntorno = new javax.swing.JMenuItem();
+        MenuItemGuardarEntorno = new javax.swing.JMenuItem();
         jMenu2 = new javax.swing.JMenu();
         MenuDetalles = new javax.swing.JMenu();
         MenuItemResumenEntorno = new javax.swing.JMenuItem();
@@ -65,10 +68,25 @@ public class PantallaPrincipal extends javax.swing.JFrame {
         });
 
         BotonCalentamientoGlobal.setText("Calentamiento global");
+        BotonCalentamientoGlobal.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BotonCalentamientoGlobalActionPerformed(evt);
+            }
+        });
 
         BotonEnfriamientoGlobal.setText("Enfriamiento global");
+        BotonEnfriamientoGlobal.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BotonEnfriamientoGlobalActionPerformed(evt);
+            }
+        });
 
         BotonInvasionZombie.setText("Invasion Zombie");
+        BotonInvasionZombie.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BotonInvasionZombieActionPerformed(evt);
+            }
+        });
 
         ZonaTexto.setBackground(new java.awt.Color(255, 255, 255));
         ZonaTexto.setBorder(javax.swing.BorderFactory.createEtchedBorder());
@@ -87,8 +105,18 @@ public class PantallaPrincipal extends javax.swing.JFrame {
         );
 
         BotonAvanzar10Dias.setText("Avanzar 10 dias");
+        BotonAvanzar10Dias.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BotonAvanzar10DiasActionPerformed(evt);
+            }
+        });
 
         BotonSalir.setText("Salir");
+        BotonSalir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BotonSalirActionPerformed(evt);
+            }
+        });
 
         MenuItemArchivo.setText("Archivo");
 
@@ -100,13 +128,13 @@ public class PantallaPrincipal extends javax.swing.JFrame {
         });
         MenuItemArchivo.add(MenuItemCrearEntorno);
 
-        MenuItemCargarEntorno.setText("Cargar entorno");
-        MenuItemCargarEntorno.addActionListener(new java.awt.event.ActionListener() {
+        MenuItemGuardarEntorno.setText("Guardar entorno");
+        MenuItemGuardarEntorno.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                MenuItemCargarEntornoPulsado(evt);
+                MenuItemGuardarEntornoPulsado(evt);
             }
         });
-        MenuItemArchivo.add(MenuItemCargarEntorno);
+        MenuItemArchivo.add(MenuItemGuardarEntorno);
 
         jMenuBar1.add(MenuItemArchivo);
         jMenuBar1.add(jMenu2);
@@ -114,6 +142,11 @@ public class PantallaPrincipal extends javax.swing.JFrame {
         MenuDetalles.setText("Detalles");
 
         MenuItemResumenEntorno.setText("Resumen entorno");
+        MenuItemResumenEntorno.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                MenuItemResumenEntornoActionPerformed(evt);
+            }
+        });
         MenuDetalles.add(MenuItemResumenEntorno);
 
         MenuItemDetallesDia.setText("Detalles del dia");
@@ -165,12 +198,12 @@ public class PantallaPrincipal extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void MenuItemCargarEntornoPulsado(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MenuItemCargarEntornoPulsado
-        // TODO add your handling code here:
-    }//GEN-LAST:event_MenuItemCargarEntornoPulsado
+    private void MenuItemGuardarEntornoPulsado(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MenuItemGuardarEntornoPulsado
+        model.GuardarEstado(model.getEntorno());
+    }//GEN-LAST:event_MenuItemGuardarEntornoPulsado
 
     private void MenuItemCrearEntornoActionPulsado(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MenuItemCrearEntornoActionPulsado
-        // TODO add your handling code here:
+        model.setEntorno(model.crearEntorno());
     }//GEN-LAST:event_MenuItemCrearEntornoActionPulsado
 
     private void formComponentHidden(java.awt.event.ComponentEvent evt) {//GEN-FIRST:event_formComponentHidden
@@ -178,8 +211,32 @@ public class PantallaPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_formComponentHidden
 
     private void BotonAvanzarDiaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonAvanzarDiaActionPerformed
-        // TODO add your handling code here:
+        model.getEntorno().AvanzarDia();
     }//GEN-LAST:event_BotonAvanzarDiaActionPerformed
+
+    private void BotonAvanzar10DiasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonAvanzar10DiasActionPerformed
+       model.getEntorno().Avanzar10Dias();
+    }//GEN-LAST:event_BotonAvanzar10DiasActionPerformed
+
+    private void BotonCalentamientoGlobalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonCalentamientoGlobalActionPerformed
+        model.getEntorno().CalentamientoGlobal();
+    }//GEN-LAST:event_BotonCalentamientoGlobalActionPerformed
+
+    private void BotonEnfriamientoGlobalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonEnfriamientoGlobalActionPerformed
+        model.getEntorno().Glaciacion();
+    }//GEN-LAST:event_BotonEnfriamientoGlobalActionPerformed
+
+    private void BotonInvasionZombieActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonInvasionZombieActionPerformed
+        model.getEntorno().InvasionZombie();
+    }//GEN-LAST:event_BotonInvasionZombieActionPerformed
+
+    private void BotonSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonSalirActionPerformed
+       System.exit(0);
+    }//GEN-LAST:event_BotonSalirActionPerformed
+
+    private void MenuItemResumenEntornoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MenuItemResumenEntornoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_MenuItemResumenEntornoActionPerformed
 
     /**
      * @param args the command line arguments
@@ -232,9 +289,9 @@ public class PantallaPrincipal extends javax.swing.JFrame {
     private javax.swing.JButton BotonSalir;
     private javax.swing.JMenu MenuDetalles;
     private javax.swing.JMenu MenuItemArchivo;
-    private javax.swing.JMenuItem MenuItemCargarEntorno;
     private javax.swing.JMenuItem MenuItemCrearEntorno;
     private javax.swing.JMenuItem MenuItemDetallesDia;
+    private javax.swing.JMenuItem MenuItemGuardarEntorno;
     private javax.swing.JMenuItem MenuItemResumenEntorno;
     private javax.swing.JPanel ZonaTexto;
     private javax.swing.ButtonGroup buttonGroup1;

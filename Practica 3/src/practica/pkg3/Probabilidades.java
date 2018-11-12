@@ -65,6 +65,12 @@ public class Probabilidades implements Serializable{
         return false;
     }
     
+    /**
+     *
+     * @param hasta
+     * @param desde
+     * @return
+     */
     public static int calculoAleatorio(int hasta, int desde)
     {
         return ram.nextInt(hasta-desde+1)+desde;

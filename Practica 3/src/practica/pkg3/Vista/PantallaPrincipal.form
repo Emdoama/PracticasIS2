@@ -33,12 +33,12 @@
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="MenuItemCrearEntornoActionPulsado"/>
               </Events>
             </MenuItem>
-            <MenuItem class="javax.swing.JMenuItem" name="MenuItemCargarEntorno">
+            <MenuItem class="javax.swing.JMenuItem" name="MenuItemGuardarEntorno">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Cargar entorno"/>
+                <Property name="text" type="java.lang.String" value="Guardar entorno"/>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="MenuItemCargarEntornoPulsado"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="MenuItemGuardarEntornoPulsado"/>
               </Events>
             </MenuItem>
           </SubComponents>
@@ -54,6 +54,9 @@
               <Properties>
                 <Property name="text" type="java.lang.String" value="Resumen entorno"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="MenuItemResumenEntornoActionPerformed"/>
+              </Events>
             </MenuItem>
             <MenuItem class="javax.swing.JMenuItem" name="MenuItemDetallesDia">
               <Properties>
@@ -145,16 +148,25 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="Calentamiento global"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BotonCalentamientoGlobalActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="BotonEnfriamientoGlobal">
       <Properties>
         <Property name="text" type="java.lang.String" value="Enfriamiento global"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BotonEnfriamientoGlobalActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="BotonInvasionZombie">
       <Properties>
         <Property name="text" type="java.lang.String" value="Invasion Zombie"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BotonInvasionZombieActionPerformed"/>
+      </Events>
     </Component>
     <Container class="javax.swing.JPanel" name="ZonaTexto">
       <Properties>
@@ -189,11 +201,17 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="Avanzar 10 dias"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BotonAvanzar10DiasActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="BotonSalir">
       <Properties>
         <Property name="text" type="java.lang.String" value="Salir"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BotonSalirActionPerformed"/>
+      </Events>
     </Component>
   </SubComponents>
 </Form>
