@@ -34,7 +34,7 @@ public class Practica3 implements Serializable{
             is = new ObjectInputStream(new FileInputStream("Entorno.dat"));
             entorno = (Entorno)is.readObject();
             is.close();
-        }catch (IOException | ClassNotFoundException e){entorno = new Entorno();}
+        }catch (Exception e){entorno = crearEntorno();}
     }
     
     public void GuardarEstado(Entorno entorno) 

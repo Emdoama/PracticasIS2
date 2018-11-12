@@ -14,16 +14,20 @@ public class Humano extends ser implements Serializable{
         boolean insertado = false;
         int i = Entorno.Humanos.size();
         
+       
+        try{
         do
-        {
+        {   
+                    
             if (velocidad < Entorno.Humanos.get(i).getVelocidad())
             {
-                Entorno.Humanos.add(i+1, humano);
+                Entorno.Humanos.add(i+1,humano);
                 insertado = true;
             }
             else
                 i--;
         }while(insertado != true);
+        }catch(IndexOutOfBoundsException e){Entorno.Humanos.add(humano);}
     }
     
     @Override

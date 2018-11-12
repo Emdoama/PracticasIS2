@@ -19,17 +19,18 @@ public class Cazavampiro extends Humano implements Serializable {
         Cazavampiro cazavampiros = new Cazavampiro(dia, velocidad);
         boolean insertado = false;
         int i = Entorno.Cazavampiros.size();
-        
+        try{
         do
         {
             if (velocidad < Entorno.Cazavampiros.get(i).getVelocidad())
             {
-                Entorno.Humanos.add(i+1, cazavampiros);
+                Entorno.Cazavampiros.add(i+1, cazavampiros);
                 insertado = true;
             }
             else
                 i--;
         }while(insertado != true);
+        }catch(IndexOutOfBoundsException e){Entorno.Cazavampiros.add(cazavampiros);}
     }
 
     void caza() {

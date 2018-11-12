@@ -19,8 +19,8 @@ public class Entorno implements Serializable{
     Random ram = new Random(System.currentTimeMillis());
     
 
-    Humano humano; // Necesario para poder usar la funcion nacer. Averiguar por que.
-    Cazavampiro cazavampiros;// Necesario para poder usar la funcion nacer. Averiguar por que.
+    Humano humano= new Humano(DIA, 0); // Necesario para poder usar la funcion nacer. Averiguar por que.
+    Cazavampiro cazavampiros=new Cazavampiro(DIA,0);// Necesario para poder usar la funcion nacer. Averiguar por que.
     
     public Entorno()
     {
