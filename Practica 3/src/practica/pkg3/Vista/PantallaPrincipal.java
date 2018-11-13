@@ -40,13 +40,14 @@ public class PantallaPrincipal extends javax.swing.JFrame {
         buttonGroup1 = new javax.swing.ButtonGroup();
         jMenuItem1 = new javax.swing.JMenuItem();
         jMenu1 = new javax.swing.JMenu();
-        BotonAvanzarDia = new javax.swing.JToggleButton();
         BotonCalentamientoGlobal = new javax.swing.JButton();
         BotonEnfriamientoGlobal = new javax.swing.JButton();
-        BotonInvasionZombie = new javax.swing.JButton();
-        ZonaTexto = new javax.swing.JPanel();
         BotonAvanzar10Dias = new javax.swing.JButton();
         BotonSalir = new javax.swing.JButton();
+        BotonAvanzarDia = new javax.swing.JButton();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        ZonaTexto = new javax.swing.JTextArea();
+        BotonInvasionZombie = new javax.swing.JToggleButton();
         jMenuBar1 = new javax.swing.JMenuBar();
         MenuItemArchivo = new javax.swing.JMenu();
         MenuItemCrearEntorno = new javax.swing.JMenuItem();
@@ -67,13 +68,6 @@ public class PantallaPrincipal extends javax.swing.JFrame {
             }
         });
 
-        BotonAvanzarDia.setText("Avanzar dia");
-        BotonAvanzarDia.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BotonAvanzarDiaActionPerformed(evt);
-            }
-        });
-
         BotonCalentamientoGlobal.setText("Calentamiento global");
         BotonCalentamientoGlobal.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -88,29 +82,6 @@ public class PantallaPrincipal extends javax.swing.JFrame {
             }
         });
 
-        BotonInvasionZombie.setText("Invasion Zombie");
-        BotonInvasionZombie.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BotonInvasionZombieActionPerformed(evt);
-            }
-        });
-
-        ZonaTexto.setBackground(new java.awt.Color(255, 255, 255));
-        ZonaTexto.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-        ZonaTexto.setForeground(new java.awt.Color(0, 5, 0));
-        ZonaTexto.setToolTipText("Aqui aparece la informacion que se quiera mostrar");
-
-        javax.swing.GroupLayout ZonaTextoLayout = new javax.swing.GroupLayout(ZonaTexto);
-        ZonaTexto.setLayout(ZonaTextoLayout);
-        ZonaTextoLayout.setHorizontalGroup(
-            ZonaTextoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 302, Short.MAX_VALUE)
-        );
-        ZonaTextoLayout.setVerticalGroup(
-            ZonaTextoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 272, Short.MAX_VALUE)
-        );
-
         BotonAvanzar10Dias.setText("Avanzar 10 dias");
         BotonAvanzar10Dias.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -122,6 +93,25 @@ public class PantallaPrincipal extends javax.swing.JFrame {
         BotonSalir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 BotonSalirActionPerformed(evt);
+            }
+        });
+
+        BotonAvanzarDia.setText("Avanzar día");
+        BotonAvanzarDia.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BotonAvanzarDiaActionPerformed(evt);
+            }
+        });
+
+        ZonaTexto.setEditable(false);
+        ZonaTexto.setColumns(20);
+        ZonaTexto.setRows(5);
+        jScrollPane1.setViewportView(ZonaTexto);
+
+        BotonInvasionZombie.setText("Invasion Zombie");
+        BotonInvasionZombie.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BotonInvasionZombieActionPerformed(evt);
             }
         });
 
@@ -171,35 +161,34 @@ public class PantallaPrincipal extends javax.swing.JFrame {
                 .addGap(38, 38, 38)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(BotonCalentamientoGlobal, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(BotonAvanzarDia, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(BotonEnfriamientoGlobal, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(BotonInvasionZombie, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(BotonAvanzar10Dias, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(BotonSalir, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 84, Short.MAX_VALUE)
-                .addComponent(ZonaTexto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(26, 26, 26))
+                    .addComponent(BotonSalir, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(BotonAvanzarDia, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(BotonInvasionZombie, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(83, 83, 83)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 309, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(24, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(56, 56, 56)
-                .addComponent(BotonAvanzarDia)
-                .addGap(18, 18, 18)
-                .addComponent(BotonAvanzar10Dias)
-                .addGap(18, 18, 18)
-                .addComponent(BotonCalentamientoGlobal)
-                .addGap(18, 18, 18)
-                .addComponent(BotonEnfriamientoGlobal)
-                .addGap(18, 18, 18)
-                .addComponent(BotonInvasionZombie)
-                .addGap(18, 18, 18)
-                .addComponent(BotonSalir)
+                .addGap(46, 46, 46)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addComponent(jScrollPane1)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(BotonAvanzarDia)
+                        .addGap(28, 28, 28)
+                        .addComponent(BotonAvanzar10Dias)
+                        .addGap(18, 18, 18)
+                        .addComponent(BotonCalentamientoGlobal)
+                        .addGap(18, 18, 18)
+                        .addComponent(BotonEnfriamientoGlobal)
+                        .addGap(18, 18, 18)
+                        .addComponent(BotonInvasionZombie)
+                        .addGap(18, 18, 18)
+                        .addComponent(BotonSalir)))
                 .addGap(38, 38, 38))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(ZonaTexto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(28, 28, 28))
         );
 
         pack();
@@ -217,10 +206,6 @@ public class PantallaPrincipal extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_formComponentHidden
 
-    private void BotonAvanzarDiaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonAvanzarDiaActionPerformed
-        model.getEntorno().AvanzarDia();
-    }//GEN-LAST:event_BotonAvanzarDiaActionPerformed
-
     private void BotonAvanzar10DiasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonAvanzar10DiasActionPerformed
        model.getEntorno().Avanzar10Dias();
     }//GEN-LAST:event_BotonAvanzar10DiasActionPerformed
@@ -233,17 +218,24 @@ public class PantallaPrincipal extends javax.swing.JFrame {
         model.getEntorno().Glaciacion();
     }//GEN-LAST:event_BotonEnfriamientoGlobalActionPerformed
 
-    private void BotonInvasionZombieActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonInvasionZombieActionPerformed
-        model.getEntorno().InvasionZombie();
-    }//GEN-LAST:event_BotonInvasionZombieActionPerformed
-
     private void BotonSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonSalirActionPerformed
        System.exit(0);
     }//GEN-LAST:event_BotonSalirActionPerformed
 
     private void MenuItemResumenEntornoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MenuItemResumenEntornoActionPerformed
-        // TODO add your handling code here:
+        ZonaTexto.setText(model.getEntorno().toString());
     }//GEN-LAST:event_MenuItemResumenEntornoActionPerformed
+
+    private void BotonAvanzarDiaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonAvanzarDiaActionPerformed
+        model.getEntorno().AvanzarDia();
+    }//GEN-LAST:event_BotonAvanzarDiaActionPerformed
+
+    private void BotonInvasionZombieActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonInvasionZombieActionPerformed
+       if(BotonInvasionZombie.getModel().isSelected())
+        model.getEntorno().InvasionZombie(true);
+       else 
+        model.getEntorno().InvasionZombie(false);   
+    }//GEN-LAST:event_BotonInvasionZombieActionPerformed
 
     /**
      * @param args the command line arguments
@@ -295,10 +287,10 @@ public class PantallaPrincipal extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton BotonAvanzar10Dias;
-    private javax.swing.JToggleButton BotonAvanzarDia;
+    private javax.swing.JButton BotonAvanzarDia;
     private javax.swing.JButton BotonCalentamientoGlobal;
     private javax.swing.JButton BotonEnfriamientoGlobal;
-    private javax.swing.JButton BotonInvasionZombie;
+    private javax.swing.JToggleButton BotonInvasionZombie;
     private javax.swing.JButton BotonSalir;
     private javax.swing.JMenu MenuDetalles;
     private javax.swing.JMenu MenuItemArchivo;
@@ -306,11 +298,12 @@ public class PantallaPrincipal extends javax.swing.JFrame {
     private javax.swing.JMenuItem MenuItemDetallesDia;
     private javax.swing.JMenuItem MenuItemGuardarEntorno;
     private javax.swing.JMenuItem MenuItemResumenEntorno;
-    private javax.swing.JPanel ZonaTexto;
+    private javax.swing.JTextArea ZonaTexto;
     private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuItem jMenuItem1;
+    private javax.swing.JScrollPane jScrollPane1;
     // End of variables declaration//GEN-END:variables
 }

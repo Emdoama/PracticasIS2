@@ -28,7 +28,8 @@ public class Cazavampiro extends Humano implements Serializable {
     }
      
     @Override
-    public void Morir() {     
+    public void Morir() {  
+        vivo=false;
     }
     void caza() {
        cantidadVampirosCazados++; 

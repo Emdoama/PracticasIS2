@@ -10,7 +10,7 @@ public class Entorno implements Serializable{
     ArrayList<Humano> Humanos = new ArrayList();
     ArrayList<Cazavampiro> Cazavampiros = new ArrayList();
     ArrayList<Vampiro> Vampiros = new ArrayList();
-    HashSet<Zombie> Zombies = new HashSet();
+    ArrayList<Zombie> Zombies = new ArrayList();
     Probabilidades probabilidades = new Probabilidades();
     boolean EventoAleatorio=false;
     private float temperatura = 20;   
@@ -24,10 +24,10 @@ public class Entorno implements Serializable{
     
     public Entorno()
     {
-        int oscilacionHumanos = 2, oscilacionCazavampiros = 5, oscilacionVampiros = 5, oscilacionZombies = 10;
+        int oscilacionHumanos = 2000, oscilacionCazavampiros = 5, oscilacionVampiros = 5, oscilacionZombies = 10;
         
         //Sacar numero aleatorio 'oscilacionHumanos 2000'       
-        for (int i = 0; i < 4 + (probabilidades.calculoAleatorio(oscilacionHumanos,0)); i++)
+        for (int i = 0; i < 4000 + (probabilidades.calculoAleatorio(oscilacionHumanos,0)); i++)
         {
             insertarEnVectorOdenado(false, new Humano(DIA,(ram.nextInt((100-60+1))+60)));
             //humano.Nacer(DIA,(ram.nextInt((100-60+1))+60));
@@ -75,41 +75,51 @@ public class Entorno implements Serializable{
     }
     public void HumanosActuan()
     {    
-        int p=0;
-        ArrayList<Humano> aux = Humanos;
-        for(Humano human: aux)
+        int p;
+        ArrayList<Humano> aux = (ArrayList<Humano>)Humanos.clone();
+         ArrayList <Humano> nuevos = new ArrayList();
+        for(Humano human: Humanos)
         {            
            if(probabilidades.reproduceHumano(temperatura)){
                 p = probabilidades.calculoAleatorio(3,1);
                 for(int i =0 ; i<p; i++){
-                insertarEnVectorOdenado(false, human.Reproducirse(DIA));
+                nuevos.add((Humano)human.Reproducirse(DIA));
                 }
            }
            if(MuerteHumano())
-               Humanos.remove(human);                    
-        }     
+               human.Morir();                 
+        }         
+        for(Humano human: aux) if(!human.isVivo())Humanos.remove(human);
+        for (Humano human : nuevos) insertarEnVectorOdenado(false, human);
+        
     }
     
     public void CazavampirosActuan()
     {
         int p=0;
-         ArrayList<Cazavampiro> aux = Cazavampiros;
-        for(Cazavampiro hunter : Cazavampiros)
+         ArrayList<Cazavampiro> aux = (ArrayList<Cazavampiro>)Cazavampiros.clone();
+         ArrayList <Cazavampiro> nuevos = new ArrayList();
+        for(Cazavampiro hunter : aux)
         {            
-            if(probabilidades.reproduceHumano(temperatura))
+            if(probabilidades.reproduceHumano(temperatura)){
                 p = probabilidades.calculoAleatorio(3,1);
                 for(int i =0 ; i<p; i++){
-                insertarEnVectorOdenado(true, hunter.Reproducirse(DIA));
+                nuevos.add((Cazavampiro)hunter.Reproducirse(DIA));
                 }
-                
+            }  
             if(MuerteHumano())
-                Cazavampiros.remove(hunter);
+                hunter.Morir();
             if(ConsigueCazar())
             {
-                hunter.caza();
-               Vampiros.remove(Vampiros.size()-1);
+               hunter.caza();
+               if(!Vampiros.isEmpty())
+                 Vampiros.remove(Vampiros.size()-1);
+               
             }
-        }
+        } 
+        for(Cazavampiro hunter : aux) if(!hunter.isVivo())Cazavampiros.remove(hunter);        
+        for (Cazavampiro hunter : nuevos) insertarEnVectorOdenado(true, hunter);
+        
     }
     
     private boolean ConsigueCazar() 
@@ -133,7 +143,9 @@ public class Entorno implements Serializable{
     private void VampirosActuan() 
     {
         boolean haComido = false;
-        for(Vampiro vamp : Vampiros)
+        ArrayList <Vampiro> aux= (ArrayList <Vampiro>)Vampiros.clone();
+        ArrayList <Vampiro> nuevos = new ArrayList();
+        for(Vampiro vamp : aux)
         {
             if(probabilidades.calculoAleatorio(100,0) >= probabilidades.getProb_comer_vamp())
             {
@@ -141,59 +153,67 @@ public class Entorno implements Serializable{
                 /*El vampiro intenta comer de un humano */
                 if (!Humanos.isEmpty())    
                 {   /*y  este puede morir..*/                   
-                    haComido =vamp.Come(haComido);
-                    Humanos.remove(Probabilidades.calculoAleatorio(1,Humanos.size()));
+                    haComido =vamp.Come(haComido);                    
+                    Humanos.remove(Probabilidades.calculoAleatorio(Humanos.size()-1,0));
                                
                     /*o ser convertido*/
                     if(probabilidades.calculoAleatorio(100, 0) >= probabilidades.getProb_conv_vamp())
-                        Vampiros.add(new Vampiro(DIA));
+                       nuevos.add(new Vampiro(DIA));
                 }
                 /*Si no puede comer muere por inanición*/
                if(haComido == false) 
-                   Vampiros.remove(vamp);
-               if(Vampiros.isEmpty())
-                   System.out.print("Los vampiros se han extinguido.");
-            }
-            
-           
+                  vamp.Morir();
+              // if(Vampiros.isEmpty())
+              //     System.out.print("Los vampiros se han extinguido.");
+            }           
         }
+        for(Vampiro vamp : aux) if(!vamp.isVivo())Vampiros.remove(vamp);
+        for (Vampiro vamp : nuevos) Vampiros.add(vamp);
+        
     }
 
     private void ZombiesActuan() 
     {
-        for(Zombie zomb: Zombies)
+        ArrayList <Zombie> aux= (ArrayList <Zombie> )Zombies.clone();
+        ArrayList <Zombie> nuevos = new ArrayList();
+        for(Zombie zomb: aux)
         {
             if(DIA - zomb.getdiaNacimiento() >= probabilidades.getDias_vida_zomb())
-                Zombies.remove(zomb);
+                zomb.Morir();
             else
             {
                 if(probabilidades.calculoAleatorio(probabilidades.getProb_conv_zomb(), 1) == 1)
                 {
-                    zomb.convierte();
-                    ZombieMata(); //Mata al ultimo del array, el cual es el mas lento
-                    Zombies.add(new Zombie(DIA));
+                   if( ZombieMata()){//Mata al ultimo del array, el cual es el mas lento
+                    zomb.convierte();                   
+                    nuevos.add(new Zombie(DIA));
+                   }
                 }
             }
         }
+        for(Zombie zomb: aux) if(!zomb.isVivo())Zombies.remove(zomb);
+        for(Zombie zomb: nuevos) Zombies.add(zomb);
     }
     
-    private void ZombieMata ()
+    private boolean ZombieMata ()
     {
         if(!Humanos.isEmpty() && !Cazavampiros.isEmpty()) //Si no hay ningun grupo extinguido
         {
-            if( Humanos.get(Humanos.size()).getVelocidad() <= Cazavampiros.get(Cazavampiros.size()).getVelocidad() )
+            if( Humanos.get(Humanos.size()-1).getVelocidad() <= Cazavampiros.get(Cazavampiros.size()-1).getVelocidad() )
             {
-                Humanos.remove(Humanos.size());
+                Humanos.remove(Humanos.size()-1);
             }
-            else if ( Humanos.get(Humanos.size()).getVelocidad() > Cazavampiros.get(Cazavampiros.size()).getVelocidad() )
+            else if ( Humanos.get(Humanos.size()-1).getVelocidad() > Cazavampiros.get(Cazavampiros.size()-1).getVelocidad() )
             {
-                Cazavampiros.remove(Cazavampiros.size());
+                Cazavampiros.remove(Cazavampiros.size()-1);
             }
         }
         else if (Humanos.isEmpty())
-            Cazavampiros.remove(Cazavampiros.size());
+            Cazavampiros.remove(Cazavampiros.size()-1);
         else if (Cazavampiros.isEmpty())
-            Humanos.remove(Humanos.size());
+            Humanos.remove(Humanos.size()-1);
+        else return false;
+       return true;
     }
     
     public void Avanzar10Dias()
@@ -211,9 +231,13 @@ public class Entorno implements Serializable{
     {
         temperatura = temperatura + 10;
     }
-    public void InvasionZombie()
+    public void InvasionZombie(boolean activado)
     {
+        if(activado)
         probabilidades.setProb_conv_zomb(3);
+        else 
+        probabilidades.setProb_conv_zomb(10); System.out.println(" no estoy pulsado");
+        
     }
     public void DetallesDiaActual()
     {
