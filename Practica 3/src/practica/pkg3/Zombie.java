@@ -51,7 +51,7 @@ public class Zombie implements Serializable{
     @Override
     public String toString()
     {
-        return "";
+        return "Humanos convertidos: " + cantidadHumanosConvertidos + ". Dia de nacimiento: " + diaNacimiento + ".\n";
     }
     
 }

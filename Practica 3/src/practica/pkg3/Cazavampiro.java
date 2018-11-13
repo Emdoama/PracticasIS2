@@ -37,6 +37,6 @@ public class Cazavampiro extends Humano implements Serializable {
     @Override
     public String toString()
     {
-        return "";
+        return "Cantidad de vampiros cazados: " + cantidadVampirosCazados + ". Dia de nacimiento: " + this.diaNacimiento + ". Velocidad: " + velocidad + ".\n";
     }
 }

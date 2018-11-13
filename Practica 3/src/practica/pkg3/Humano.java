@@ -18,22 +18,18 @@ public class Humano extends ser implements Serializable{
         this.vivo = true;
     }
     @Override
-    public Object Nacer(int dia, int velocidad) {
-        
+    public Object Nacer(int dia, int velocidad) {  
        return new Humano(dia, velocidad);
-               
     }
     
     @Override
     public void Morir() {   
-        vivo=false;
+        vivo = false;
     }
     @Override
     public Object Reproducirse( int dia) 
     {
-       
-            return this.Nacer(dia, velocidad);
-            
+        return this.Nacer(dia, velocidad);       
     }
     int getVelocidad() {
         return velocidad;
@@ -41,7 +37,7 @@ public class Humano extends ser implements Serializable{
     @Override
     public String toString()
     {
-        return "";
+        return "Dia de nacimiento: " + diaNacimiento + ". Velocidad: " + velocidad + ".\n";
     }
 }
 

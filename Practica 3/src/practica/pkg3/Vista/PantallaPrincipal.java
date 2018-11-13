@@ -6,7 +6,6 @@
 package practica.pkg3.Vista;
 
 import java.awt.BorderLayout;
-import javax.swing.JFrame;
 import practica.pkg3.Practica3;
 
 /**
@@ -25,6 +24,7 @@ public class PantallaPrincipal extends javax.swing.JFrame {
         this.setLayout(new BorderLayout());
         this.setSize(700,400);
         model =p3;
+        ZonaTexto.setText(model.getEntorno().DetallesDiaActual());
                         
     }
 
@@ -167,8 +167,8 @@ public class PantallaPrincipal extends javax.swing.JFrame {
                     .addComponent(BotonAvanzarDia, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(BotonInvasionZombie, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(83, 83, 83)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 309, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(24, Short.MAX_VALUE))
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 550, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(57, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -207,27 +207,34 @@ public class PantallaPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_formComponentHidden
 
     private void BotonAvanzar10DiasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonAvanzar10DiasActionPerformed
-       model.getEntorno().Avanzar10Dias();
+        model.getEntorno().Avanzar10Dias();
+        ZonaTexto.setText(model.getEntorno().DetallesDiaActual());
+       
     }//GEN-LAST:event_BotonAvanzar10DiasActionPerformed
 
     private void BotonCalentamientoGlobalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonCalentamientoGlobalActionPerformed
         model.getEntorno().CalentamientoGlobal();
+        
+        ZonaTexto.setText(model.getEntorno().DetallesDiaActual());
     }//GEN-LAST:event_BotonCalentamientoGlobalActionPerformed
 
     private void BotonEnfriamientoGlobalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonEnfriamientoGlobalActionPerformed
         model.getEntorno().Glaciacion();
+        ZonaTexto.setText(model.getEntorno().DetallesDiaActual());
     }//GEN-LAST:event_BotonEnfriamientoGlobalActionPerformed
 
     private void BotonSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonSalirActionPerformed
-       System.exit(0);
+        model.GuardarEstado(model.getEntorno()); 
+        System.exit(0);
     }//GEN-LAST:event_BotonSalirActionPerformed
 
     private void MenuItemResumenEntornoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MenuItemResumenEntornoActionPerformed
-        ZonaTexto.setText(model.getEntorno().toString());
+        ZonaTexto.setText(model.getEntorno().Resumen());
     }//GEN-LAST:event_MenuItemResumenEntornoActionPerformed
 
     private void BotonAvanzarDiaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonAvanzarDiaActionPerformed
         model.getEntorno().AvanzarDia();
+        ZonaTexto.setText(model.getEntorno().DetallesDiaActual());
     }//GEN-LAST:event_BotonAvanzarDiaActionPerformed
 
     private void BotonInvasionZombieActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonInvasionZombieActionPerformed

@@ -14,7 +14,7 @@ public class Vampiro implements Serializable{
         vivo=true;
     }
     boolean Come(boolean haComido) {       
-            cantidadHumanosConvertidos++;         
+            cantidadHumanosConvertidos++;
         return true;
     }
     public void Morir()
@@ -48,6 +48,6 @@ public class Vampiro implements Serializable{
     @Override
     public String toString()
     {
-        return "";
+        return "Dia de nacimiento: " + diaNacimiento + ". Cantidad de humanos convertidos: " + cantidadHumanosConvertidos + ".\n";
     }
 }
