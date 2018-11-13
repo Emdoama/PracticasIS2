@@ -2,10 +2,6 @@ package practica.pkg3;
 
 import java.io.Serializable;
 
-/**
- *
- * @author Alber
- */
 public class Cazavampiro extends Humano implements Serializable {
     int cantidadVampirosCazados;
    
@@ -27,10 +23,10 @@ public class Cazavampiro extends Humano implements Serializable {
             
     }
      
-    @Override
-    public void Morir() {  
+    //@Override
+   /* public void Morir() {  
         vivo=false;
-    }
+    }*/
     void caza() {
        cantidadVampirosCazados++; 
     }

@@ -6,21 +6,21 @@ import java.io.Serializable;
 public class Vampiro implements Serializable{
     int cantidadHumanosConvertidos;
     int diaNacimiento;
-    boolean vivo;
+   /* boolean vivo;*/
     public Vampiro(int dia)
     {
         cantidadHumanosConvertidos = 0;
         diaNacimiento=dia;
-        vivo=true;
+        //vivo=true;
     }
     boolean Come(boolean haComido) {       
             cantidadHumanosConvertidos++;
         return true;
     }
-    public void Morir()
+  /*  public void Morir()
     {
         vivo =false;
-    }    
+    }    */
 
     public int getCantidadHumanosConvertidos() {
         return cantidadHumanosConvertidos;
@@ -38,13 +38,13 @@ public class Vampiro implements Serializable{
         this.diaNacimiento = diaNacimiento;
     }
 
-    public boolean isVivo() {
+  /*  public boolean isVivo() {
         return vivo;
     }
 
     public void setVivo(boolean vivo) {
         this.vivo = vivo;
-    }
+    }*/
     @Override
     public String toString()
     {

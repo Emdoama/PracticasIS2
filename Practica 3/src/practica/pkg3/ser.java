@@ -20,11 +20,6 @@ import java.io.Serializable;
      * @param dia
      */
     public abstract Object Reproducirse(int dia);
-    
-    /**
-     * 
-     */
-    public abstract void Morir();
-    
+        
     
 }

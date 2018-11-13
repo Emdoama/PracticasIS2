@@ -2,7 +2,7 @@ package practica.pkg3;
 import java.io.Serializable;
 
 public class Humano extends ser implements Serializable{
-    protected boolean vivo;
+   /* protected boolean vivo;
 
     public boolean isVivo() {
         return vivo;
@@ -10,22 +10,22 @@ public class Humano extends ser implements Serializable{
 
     public void setVivo(boolean vivo) {
         this.vivo = vivo;
-    }
+    }*/
     public Humano(int DIA, int velocidad)
     {
         this.diaNacimiento = DIA;
         this.velocidad = velocidad;
-        this.vivo = true;
+        //this.vivo = true;
     }
     @Override
     public Object Nacer(int dia, int velocidad) {  
        return new Humano(dia, velocidad);
     }
     
-    @Override
+   /* @Override
     public void Morir() {   
-        vivo = false;
-    }
+       // vivo = false;
+    }*/
     @Override
     public Object Reproducirse( int dia) 
     {

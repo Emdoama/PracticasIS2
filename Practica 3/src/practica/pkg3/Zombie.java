@@ -5,7 +5,7 @@ import java.io.Serializable;
 public class Zombie implements Serializable{
     private int cantidadHumanosConvertidos;
     private int diaNacimiento;
-    private boolean vivo;
+   // private boolean vivo;
 
     public int getCantidadHumanosConvertidos() {
         return cantidadHumanosConvertidos;
@@ -23,18 +23,18 @@ public class Zombie implements Serializable{
         this.diaNacimiento = diaNacimiento;
     }
 
-    public boolean isVivo() {
+   /* public boolean isVivo() {
         return vivo;
-    }
+    }*/
 
-    public void setVivo(boolean vivo) {
+   /* public void setVivo(boolean vivo) {
         this.vivo = vivo;
-    }
+    }*/
 
     Zombie(int dia) {
        diaNacimiento = dia;
        cantidadHumanosConvertidos = 0;
-       vivo = true;
+      // vivo = true;
     }
     public void convierte() 
     {
@@ -44,10 +44,10 @@ public class Zombie implements Serializable{
     {
         return diaNacimiento;
     }
-    public void Morir()
+   /* public void Morir()
     {
         vivo =false;
-    } 
+    } */
     @Override
     public String toString()
     {

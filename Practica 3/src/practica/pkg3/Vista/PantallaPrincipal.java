@@ -8,10 +8,6 @@ package practica.pkg3.Vista;
 import java.awt.BorderLayout;
 import practica.pkg3.Practica3;
 
-/**
- *
- * @author Alber
- */
 public class PantallaPrincipal extends javax.swing.JFrame {
    Practica3 model;
     /**
@@ -19,10 +15,11 @@ public class PantallaPrincipal extends javax.swing.JFrame {
      * @param p3
      */
     public PantallaPrincipal(Practica3 p3) {
-        super("Hola");
+        super("Pantalla Simulador Entorno Apolcalíptico");
         initComponents();
-        this.setLayout(new BorderLayout());
-        this.setSize(700,400);
+        //this.setLayout(new BorderLayout());
+        //this.setSize(700,400);
+        
         model =p3;
         ZonaTexto.setText(model.getEntorno().DetallesDiaActual());
                         
@@ -48,6 +45,9 @@ public class PantallaPrincipal extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         ZonaTexto = new javax.swing.JTextArea();
         BotonInvasionZombie = new javax.swing.JToggleButton();
+        BotonEpidemiaGlobal = new javax.swing.JButton();
+        jButton1 = new javax.swing.JButton();
+        BotonSedDeSangre = new javax.swing.JToggleButton();
         jMenuBar1 = new javax.swing.JMenuBar();
         MenuItemArchivo = new javax.swing.JMenu();
         MenuItemCrearEntorno = new javax.swing.JMenuItem();
@@ -56,12 +56,14 @@ public class PantallaPrincipal extends javax.swing.JFrame {
         MenuDetalles = new javax.swing.JMenu();
         MenuItemResumenEntorno = new javax.swing.JMenuItem();
         MenuItemDetallesDia = new javax.swing.JMenuItem();
+        MenuItemResumenDia = new javax.swing.JMenuItem();
 
         jMenuItem1.setText("jMenuItem1");
 
         jMenu1.setText("jMenu1");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setResizable(false);
         addComponentListener(new java.awt.event.ComponentAdapter() {
             public void componentHidden(java.awt.event.ComponentEvent evt) {
                 formComponentHidden(evt);
@@ -115,6 +117,27 @@ public class PantallaPrincipal extends javax.swing.JFrame {
             }
         });
 
+        BotonEpidemiaGlobal.setText("Epidemia global");
+        BotonEpidemiaGlobal.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BotonEpidemiaGlobalActionPerformed(evt);
+            }
+        });
+
+        jButton1.setText("Invasion Alien");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+
+        BotonSedDeSangre.setText("Sed de Sangre");
+        BotonSedDeSangre.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BotonSedDeSangreActionPerformed(evt);
+            }
+        });
+
         MenuItemArchivo.setText("Archivo");
 
         MenuItemCrearEntorno.setText("Crear entorno");
@@ -147,7 +170,20 @@ public class PantallaPrincipal extends javax.swing.JFrame {
         MenuDetalles.add(MenuItemResumenEntorno);
 
         MenuItemDetallesDia.setText("Detalles del dia");
+        MenuItemDetallesDia.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                MenuItemDetallesDiaActionPerformed(evt);
+            }
+        });
         MenuDetalles.add(MenuItemDetallesDia);
+
+        MenuItemResumenDia.setText("Resumen dia");
+        MenuItemResumenDia.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                MenuItemResumenDiaActionPerformed(evt);
+            }
+        });
+        MenuDetalles.add(MenuItemResumenDia);
 
         jMenuBar1.add(MenuDetalles);
 
@@ -160,35 +196,46 @@ public class PantallaPrincipal extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGap(38, 38, 38)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(BotonCalentamientoGlobal, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(BotonCalentamientoGlobal, javax.swing.GroupLayout.DEFAULT_SIZE, 190, Short.MAX_VALUE)
                     .addComponent(BotonEnfriamientoGlobal, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(BotonAvanzar10Dias, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(BotonSalir, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(BotonAvanzarDia, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(BotonInvasionZombie, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(BotonEpidemiaGlobal, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(BotonInvasionZombie, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(BotonSedDeSangre, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(83, 83, 83)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 550, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(57, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(46, 46, 46)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addComponent(jScrollPane1)
+                .addGap(39, 39, 39)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 238, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(38, 38, 38))
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(BotonAvanzarDia)
-                        .addGap(28, 28, 28)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(BotonAvanzar10Dias)
-                        .addGap(18, 18, 18)
+                        .addGap(13, 13, 13)
+                        .addComponent(BotonEpidemiaGlobal)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(BotonCalentamientoGlobal)
-                        .addGap(18, 18, 18)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(BotonEnfriamientoGlobal)
-                        .addGap(18, 18, 18)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jButton1)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(BotonSedDeSangre)
+                        .addGap(4, 4, 4)
                         .addComponent(BotonInvasionZombie)
-                        .addGap(18, 18, 18)
-                        .addComponent(BotonSalir)))
-                .addGap(38, 38, 38))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(BotonSalir)
+                        .addGap(18, 18, 18))))
         );
 
         pack();
@@ -200,6 +247,7 @@ public class PantallaPrincipal extends javax.swing.JFrame {
 
     private void MenuItemCrearEntornoActionPulsado(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MenuItemCrearEntornoActionPulsado
         model.setEntorno(model.crearEntorno());
+        ZonaTexto.setText(model.getEntorno().DetallesDiaActual());
     }//GEN-LAST:event_MenuItemCrearEntornoActionPulsado
 
     private void formComponentHidden(java.awt.event.ComponentEvent evt) {//GEN-FIRST:event_formComponentHidden
@@ -243,6 +291,31 @@ public class PantallaPrincipal extends javax.swing.JFrame {
        else 
         model.getEntorno().InvasionZombie(false);   
     }//GEN-LAST:event_BotonInvasionZombieActionPerformed
+
+    private void BotonEpidemiaGlobalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonEpidemiaGlobalActionPerformed
+        model.getEntorno().EpidemiaGlobal();
+        ZonaTexto.setText(model.getEntorno().DetallesDiaActual());
+    }//GEN-LAST:event_BotonEpidemiaGlobalActionPerformed
+
+    private void BotonSedDeSangreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonSedDeSangreActionPerformed
+         if(BotonSedDeSangre.getModel().isSelected())
+        model.getEntorno().SedDeSangre(true);
+       else 
+        model.getEntorno().SedDeSangre(false);   
+    }//GEN-LAST:event_BotonSedDeSangreActionPerformed
+
+    private void MenuItemDetallesDiaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MenuItemDetallesDiaActionPerformed
+        ZonaTexto.setText(model.getEntorno().DetallesDiaActual());
+    }//GEN-LAST:event_MenuItemDetallesDiaActionPerformed
+
+    private void MenuItemResumenDiaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MenuItemResumenDiaActionPerformed
+        ZonaTexto.setText(model.getEntorno().ResumenDia());
+    }//GEN-LAST:event_MenuItemResumenDiaActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        ZonaTexto.setText("\nLos Alien han invadido la tierra y resultan ser hostiles,\ntodos los humanos que quedaban vivos pasan a ser sus esclavos.\nLo sentimos, la simulación vuelve a empezar.");
+        model.setEntorno(model.crearEntorno());
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -297,16 +370,20 @@ public class PantallaPrincipal extends javax.swing.JFrame {
     private javax.swing.JButton BotonAvanzarDia;
     private javax.swing.JButton BotonCalentamientoGlobal;
     private javax.swing.JButton BotonEnfriamientoGlobal;
+    private javax.swing.JButton BotonEpidemiaGlobal;
     private javax.swing.JToggleButton BotonInvasionZombie;
     private javax.swing.JButton BotonSalir;
+    private javax.swing.JToggleButton BotonSedDeSangre;
     private javax.swing.JMenu MenuDetalles;
     private javax.swing.JMenu MenuItemArchivo;
     private javax.swing.JMenuItem MenuItemCrearEntorno;
     private javax.swing.JMenuItem MenuItemDetallesDia;
     private javax.swing.JMenuItem MenuItemGuardarEntorno;
+    private javax.swing.JMenuItem MenuItemResumenDia;
     private javax.swing.JMenuItem MenuItemResumenEntorno;
     private javax.swing.JTextArea ZonaTexto;
     private javax.swing.ButtonGroup buttonGroup1;
+    private javax.swing.JButton jButton1;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenuBar jMenuBar1;
