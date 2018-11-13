@@ -10,15 +10,16 @@ import java.io.Serializable;
      * 
      * @param dia
      * @param velocidad
+     * @return 
      */
-    public abstract void Nacer(int dia, int velocidad);   
+    public abstract Object Nacer(int dia, int velocidad);   
     
     /**
      * 
      * @param cantidad
      * @param dia
      */
-    public abstract void Reproducirse(int cantidad,int dia);
+    public abstract Object Reproducirse(int dia);
     
     /**
      * 

@@ -8,39 +8,21 @@ public class Humano extends ser implements Serializable{
         this.velocidad = velocidad;
     }
     @Override
-    public void Nacer(int dia, int velocidad) {
+    public Object Nacer(int dia, int velocidad) {
         
-        Humano humano = new Humano(dia, velocidad);
-        boolean insertado = false;
-        int i = Entorno.Humanos.size();
-        
-       
-        try{
-        do
-        {   
-                    
-            if (velocidad < Entorno.Humanos.get(i).getVelocidad())
-            {
-                Entorno.Humanos.add(i+1,humano);
-                insertado = true;
-            }
-            else
-                i--;
-        }while(insertado != true);
-        }catch(IndexOutOfBoundsException e){Entorno.Humanos.add(humano);}
+       return new Humano(dia, velocidad);
+               
     }
     
     @Override
-    public void Morir() {
-        Entorno.Humanos.remove(Probabilidades.calculoAleatorio(0, Entorno.Humanos.size()));
+    public void Morir() {     
     }
     @Override
-    public void Reproducirse(int cantidad, int dia) 
+    public Object Reproducirse( int dia) 
     {
-        for (int i=1 ; i <= cantidad; i++)
-        {
-            this.Nacer(dia, velocidad);
-        }       
+       
+            return this.Nacer(dia, velocidad);
+            
     }
     int getVelocidad() {
         return velocidad;

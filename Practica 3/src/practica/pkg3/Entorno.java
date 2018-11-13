@@ -7,10 +7,10 @@ import java.util.Random;
 
 public class Entorno implements Serializable{
     
-    public static ArrayList<Humano> Humanos = new ArrayList();
-    static ArrayList<Cazavampiro> Cazavampiros = new ArrayList();
-    static ArrayList<Vampiro> Vampiros = new ArrayList();
-    static HashSet<Zombie> Zombies = new HashSet();
+    ArrayList<Humano> Humanos = new ArrayList();
+    ArrayList<Cazavampiro> Cazavampiros = new ArrayList();
+    ArrayList<Vampiro> Vampiros = new ArrayList();
+    HashSet<Zombie> Zombies = new HashSet();
     Probabilidades probabilidades = new Probabilidades();
     boolean EventoAleatorio=false;
     private float temperatura = 20;   
@@ -19,23 +19,25 @@ public class Entorno implements Serializable{
     Random ram = new Random(System.currentTimeMillis());
     
 
-    Humano humano= new Humano(DIA, 0); // Necesario para poder usar la funcion nacer. Averiguar por que.
-    Cazavampiro cazavampiros=new Cazavampiro(DIA,0);// Necesario para poder usar la funcion nacer. Averiguar por que.
+   // Humano humano= new Humano(DIA, 0); // Necesario para poder usar la funcion nacer. Averiguar por que.
+   // Cazavampiro cazavampiros=new Cazavampiro(DIA,0);// Necesario para poder usar la funcion nacer. Averiguar por que.
     
     public Entorno()
     {
-        int oscilacionHumanos = 2000, oscilacionCazavampiros = 5, oscilacionVampiros = 5, oscilacionZombies = 10;
+        int oscilacionHumanos = 2, oscilacionCazavampiros = 5, oscilacionVampiros = 5, oscilacionZombies = 10;
         
         //Sacar numero aleatorio 'oscilacionHumanos 2000'       
-        for (int i = 0; i < 4000 + (probabilidades.calculoAleatorio(oscilacionHumanos,0)); i++)
+        for (int i = 0; i < 4 + (probabilidades.calculoAleatorio(oscilacionHumanos,0)); i++)
         {
-            humano.Nacer(DIA,(ram.nextInt((100-60+1))+60));
+            insertarEnVectorOdenado(false, new Humano(DIA,(ram.nextInt((100-60+1))+60)));
+            //humano.Nacer(DIA,(ram.nextInt((100-60+1))+60));
         }
     
         //Sacar numero aleatorio 'oscilacionCazavampiros 5'        
         for (int i = 0; i < 10 + (probabilidades.calculoAleatorio(oscilacionCazavampiros,0)); i++)
         {
-            cazavampiros.Nacer(DIA,(ram.nextInt((100 - 60 + 1)) + 60));
+            insertarEnVectorOdenado(true, new Cazavampiro(DIA,(ram.nextInt((100-60+1))+60)));
+            //cazavampiros.Nacer(DIA,(ram.nextInt((100 - 60 + 1)) + 60));
         }
         
         //Sacar numero aleatorio oscilacionVampiros 5' 
@@ -73,23 +75,35 @@ public class Entorno implements Serializable{
     }
     public void HumanosActuan()
     {    
-        for(Humano human: Humanos)
+        int p=0;
+        ArrayList<Humano> aux = Humanos;
+        for(Humano human: aux)
         {            
-           if(probabilidades.reproduceHumano(temperatura))
-               human.Reproducirse(probabilidades.calculoAleatorio(3,1), DIA);
+           if(probabilidades.reproduceHumano(temperatura)){
+                p = probabilidades.calculoAleatorio(3,1);
+                for(int i =0 ; i<p; i++){
+                insertarEnVectorOdenado(false, human.Reproducirse(DIA));
+                }
+           }
            if(MuerteHumano())
-               human.Morir();                     
+               Humanos.remove(human);                    
         }     
     }
     
     public void CazavampirosActuan()
     {
+        int p=0;
+         ArrayList<Cazavampiro> aux = Cazavampiros;
         for(Cazavampiro hunter : Cazavampiros)
         {            
             if(probabilidades.reproduceHumano(temperatura))
-                hunter.Reproducirse(probabilidades.calculoAleatorio(3,1), DIA);           
+                p = probabilidades.calculoAleatorio(3,1);
+                for(int i =0 ; i<p; i++){
+                insertarEnVectorOdenado(true, hunter.Reproducirse(DIA));
+                }
+                
             if(MuerteHumano())
-                hunter.Morir();
+                Cazavampiros.remove(hunter);
             if(ConsigueCazar())
             {
                 hunter.caza();
@@ -123,12 +137,18 @@ public class Entorno implements Serializable{
         {
             if(probabilidades.calculoAleatorio(100,0) >= probabilidades.getProb_comer_vamp())
             {
-                /*El vampiro come de un humano y puede morir..*/
-                haComido = vamp.Come(haComido);                    
-                /*o ser convertido*/
-                if(probabilidades.calculoAleatorio(100, 0) >= probabilidades.getProb_conv_vamp())
-                    Vampiros.add(new Vampiro(DIA));                
-                /*Muerte por inanición*/
+                
+                /*El vampiro intenta comer de un humano */
+                if (!Humanos.isEmpty())    
+                {   /*y  este puede morir..*/                   
+                    haComido =vamp.Come(haComido);
+                    Humanos.remove(Probabilidades.calculoAleatorio(1,Humanos.size()));
+                               
+                    /*o ser convertido*/
+                    if(probabilidades.calculoAleatorio(100, 0) >= probabilidades.getProb_conv_vamp())
+                        Vampiros.add(new Vampiro(DIA));
+                }
+                /*Si no puede comer muere por inanición*/
                if(haComido == false) 
                    Vampiros.remove(vamp);
                if(Vampiros.isEmpty())
@@ -199,6 +219,50 @@ public class Entorno implements Serializable{
     {
         this.toString();
     }
+    
+    public void insertarEnVectorOdenado(boolean hunter, Object o)
+    {
+        boolean insertado = false;
+        int i = Humanos.size();
+        Humano humano;
+        Cazavampiro cazavampiro;
+    
+        if(!hunter){     
+           humano=(Humano)o;   
+        try{            
+        do
+        {                 
+            if (humano.getVelocidad() < Humanos.get(i-1).getVelocidad())
+            {
+                Humanos.add(i,humano);
+                insertado = true;
+            }
+            else
+                i--;
+        }while(insertado != true);
+        }catch(IndexOutOfBoundsException e){Humanos.add(i,humano);}       
+      
+        }else{
+             cazavampiro=(Cazavampiro)o;
+            i = Cazavampiros.size();
+            try{
+                do
+                {
+                    if (cazavampiro.getVelocidad()< Cazavampiros.get(i-1).getVelocidad())
+                    {
+                        Cazavampiros.add(i, cazavampiro);
+                        insertado = true;
+                    }
+                    else
+                        i--;
+                }while(insertado != true);
+            }catch(IndexOutOfBoundsException e){Cazavampiros.add(i,cazavampiro);}
+        }
+    
+       
+    
+    }
+        
     @Override
     public String toString()
     {

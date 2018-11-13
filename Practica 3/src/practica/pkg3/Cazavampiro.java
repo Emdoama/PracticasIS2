@@ -14,25 +14,22 @@ public class Cazavampiro extends Humano implements Serializable {
         cantidadVampirosCazados = 0;
     }
     
-    public void Nacer(int dia, int velocidad) {
+    @Override
+    public Object Nacer(int dia, int velocidad) {
         
-        Cazavampiro cazavampiros = new Cazavampiro(dia, velocidad);
-        boolean insertado = false;
-        int i = Entorno.Cazavampiros.size();
-        try{
-        do
-        {
-            if (velocidad < Entorno.Cazavampiros.get(i).getVelocidad())
-            {
-                Entorno.Cazavampiros.add(i+1, cazavampiros);
-                insertado = true;
-            }
-            else
-                i--;
-        }while(insertado != true);
-        }catch(IndexOutOfBoundsException e){Entorno.Cazavampiros.add(cazavampiros);}
+        return new Cazavampiro(dia, velocidad);
+        
     }
-
+    @Override
+     public Object Reproducirse(int dia) 
+    {        
+            return this.Nacer(dia, velocidad);
+            
+    }
+     
+    @Override
+    public void Morir() {     
+    }
     void caza() {
        cantidadVampirosCazados++; 
     }
