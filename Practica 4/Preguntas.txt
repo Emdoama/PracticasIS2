@@ -1,0 +1,3 @@
+¿Que diferencia piensas que hay entre un Error y un Failure?
+Un failure es cuando los test fallan, por ejemplo que los asserts sean incorrectos.
+Un error es cuando es una ejecucion inesperada y ocurre un error durante el test, como una excepcion.

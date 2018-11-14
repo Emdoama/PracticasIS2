@@ -89,4 +89,24 @@ public class ShoppingCart {
     	writer.flush();
     	writer.close();
     }
+    
+    // Ejercicio 1: Añadir metodo findProduct(String titulo)  // Devuelve true o false si el titulo esta
+    
+    public boolean findProduct(String titulo)
+    {
+        boolean existe = false;
+        
+        for (int i = 0; i < getItemCount(); i++)
+        {
+          
+            
+            if(titulo.equals(_items.get(i).getTitle()))
+            {
+              
+                existe = true;
+            }
+        }
+        
+        return existe;
+    }
 }
