@@ -5,11 +5,13 @@
  */
 package practica.pkg4;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
 import org.junit.After;
 import org.junit.AfterClass;
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
 import org.junit.Before;
@@ -17,25 +19,32 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
-import org.junit.runners.Parameterized.Parameters;
 
-/**
- *
- * @author Alber
- */
-public class ShoppingCartTest {
+
+
+@RunWith(Parameterized.class)
+public class ParamShoppingCartTest {
+       
     
+     private int precio1;
+     private int precio2;
         
-    
-    
-    public ShoppingCartTest() {
-        ShoppingCart carrito = new ShoppingCart();
-        
-        assertTrue(carrito.isEmpty());
+           
+             @Parameterized.Parameters
+            public static Collection<int[]> data(){
+            return Arrays.asList(new int[][]{ {0, 0}, {1, 1} });
+            }
+            
+            /* Constructor*/
+            public ParamShoppingCartTest(int _precio1, int _precio2)
+            {
+            precio1 = _precio1;
+            precio2 = _precio2;
+            }
+  
    
-                
-    }
-    
+        
+       
     @BeforeClass
     public static void setUpClass() {
     }
@@ -58,23 +67,16 @@ public class ShoppingCartTest {
     @Test
     public void testGetBalance() {
         System.out.println("Test funcion obtener balance. GetBalance()\n");
-        Product p, p1, p2, p3;
-        p = new Product("Producto", 0);
-        p1 = new Product("Producto 1", 1);
-        p2 = new Product("Producto 2", 2);
-        p3 = new Product("Producto 2", 3);
-        ShoppingCart instance = new ShoppingCart();
-        instance.addItem(p);
-        instance.addItem(p1);
-        instance.addItem(p2);
-        instance.addItem(p3);
-        double expResult = 6.0;
-        double result = instance.getBalance();
+              
+       
+        double expResult = 1.0;
+        
+        double result = precio1+precio2;
         
         assertEquals(expResult, result, 0.0);
     }
 
-    /**
+   /**
      * Test of addItem method, of class ShoppingCart.
      */
     @Test
@@ -84,8 +86,7 @@ public class ShoppingCartTest {
         p = new Product("Producto", 0);
         p1 = new Product("Producto 1", 1);
         p2 = new Product("Producto 2", 2);
-        p3 = new Product("Producto 2", 3);
-        
+        p3 = new Product("Producto 2", 3);        
         ShoppingCart instance = new ShoppingCart();
         instance.addItem(p);
         instance.addItem(p1);
