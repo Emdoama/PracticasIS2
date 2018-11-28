@@ -78,3 +78,45 @@ nov 28, 2018 12:15:23 PM org.apache.coyote.AbstractProtocol start
 INFORMACIÓN: Starting ProtocolHandler ["ajp-apr-8009"]
 nov 28, 2018 12:15:24 PM org.apache.catalina.startup.Catalina start
 INFORMACIÓN: Server startup in 1336 ms
+nov 28, 2018 12:26:52 PM org.apache.catalina.startup.HostConfig deployDescriptor
+INFORMACIÓN: Desplieque del descriptor de configuración C:\Users\Alber\OneDrive\Universidad\IS2\Practicas\PracticasIS2\Practica 5\Tomcat\apache-tomcat-7.0.92\conf\Catalina\localhost\Practica_5.xml
+nov 28, 2018 12:26:52 PM org.apache.catalina.startup.HostConfig deployDescriptor
+INFORMACIÓN: Deployment of configuration descriptor C:\Users\Alber\OneDrive\Universidad\IS2\Practicas\PracticasIS2\Practica 5\Tomcat\apache-tomcat-7.0.92\conf\Catalina\localhost\Practica_5.xml has finished in 98 ms
+nov 28, 2018 12:26:52 PM org.apache.catalina.util.LifecycleBase start
+INFORMACIÓN: The start() method was called on component [StandardEngine[Catalina].StandardHost[localhost].StandardContext[/Practica_5]] after start() had already been called. The second call will be ignored.
+nov 28, 2018 12:27:33 PM org.apache.catalina.startup.HostConfig undeploy
+INFORMACIÓN: Repliegue (undeploy) de la aplicación web que tiene como trayectoria de contexto /Practica_5
+nov 28, 2018 12:27:33 PM org.apache.catalina.startup.HostConfig deployDescriptor
+INFORMACIÓN: Desplieque del descriptor de configuración C:\Users\Alber\OneDrive\Universidad\IS2\Practicas\PracticasIS2\Practica 5\Tomcat\apache-tomcat-7.0.92\conf\Catalina\localhost\Practica_5.xml
+nov 28, 2018 12:27:33 PM org.apache.catalina.startup.HostConfig deployDescriptor
+INFORMACIÓN: Deployment of configuration descriptor C:\Users\Alber\OneDrive\Universidad\IS2\Practicas\PracticasIS2\Practica 5\Tomcat\apache-tomcat-7.0.92\conf\Catalina\localhost\Practica_5.xml has finished in 64 ms
+nov 28, 2018 12:27:33 PM org.apache.catalina.util.LifecycleBase start
+INFORMACIÓN: The start() method was called on component [StandardEngine[Catalina].StandardHost[localhost].StandardContext[/Practica_5]] after start() had already been called. The second call will be ignored.
+nov 28, 2018 12:28:11 PM org.apache.catalina.startup.HostConfig undeploy
+INFORMACIÓN: Repliegue (undeploy) de la aplicación web que tiene como trayectoria de contexto /Practica_5
+nov 28, 2018 12:28:31 PM org.apache.catalina.startup.HostConfig deployDescriptor
+INFORMACIÓN: Desplieque del descriptor de configuración C:\Users\Alber\OneDrive\Universidad\IS2\Practicas\PracticasIS2\Practica 5\Tomcat\apache-tomcat-7.0.92\conf\Catalina\localhost\Practica5.xml
+nov 28, 2018 12:28:32 PM org.apache.catalina.startup.HostConfig deployDescriptor
+INFORMACIÓN: Deployment of configuration descriptor C:\Users\Alber\OneDrive\Universidad\IS2\Practicas\PracticasIS2\Practica 5\Tomcat\apache-tomcat-7.0.92\conf\Catalina\localhost\Practica5.xml has finished in 67 ms
+nov 28, 2018 12:28:32 PM org.apache.catalina.util.LifecycleBase start
+INFORMACIÓN: The start() method was called on component [StandardEngine[Catalina].StandardHost[localhost].StandardContext[/Practica5]] after start() had already been called. The second call will be ignored.
+nov 28, 2018 12:29:49 PM org.apache.catalina.core.StandardContext reload
+INFORMACIÓN: Ha comenzado la recarga de Contexto [/Practica5]
+nov 28, 2018 12:29:50 PM org.apache.catalina.core.StandardContext reload
+INFORMACIÓN: Se ha completado la recarga de este Contexto
+nov 28, 2018 12:41:00 PM org.apache.catalina.core.StandardContext reload
+INFORMACIÓN: Ha comenzado la recarga de Contexto [/Practica5]
+nov 28, 2018 12:41:00 PM org.apache.catalina.core.StandardContext reload
+INFORMACIÓN: Se ha completado la recarga de este Contexto
+nov 28, 2018 12:50:53 PM org.apache.catalina.core.StandardContext reload
+INFORMACIÓN: Ha comenzado la recarga de Contexto [/Practica5]
+nov 28, 2018 12:50:53 PM org.apache.catalina.core.StandardContext reload
+INFORMACIÓN: Se ha completado la recarga de este Contexto
+nov 28, 2018 12:50:58 PM org.apache.catalina.startup.HostConfig undeploy
+INFORMACIÓN: Repliegue (undeploy) de la aplicación web que tiene como trayectoria de contexto /Practica5
+nov 28, 2018 12:50:58 PM org.apache.catalina.startup.HostConfig deployDescriptor
+INFORMACIÓN: Desplieque del descriptor de configuración C:\Users\Alber\OneDrive\Universidad\IS2\Practicas\PracticasIS2\Practica 5\Tomcat\apache-tomcat-7.0.92\conf\Catalina\localhost\Practica5.xml
+nov 28, 2018 12:50:58 PM org.apache.catalina.startup.HostConfig deployDescriptor
+INFORMACIÓN: Deployment of configuration descriptor C:\Users\Alber\OneDrive\Universidad\IS2\Practicas\PracticasIS2\Practica 5\Tomcat\apache-tomcat-7.0.92\conf\Catalina\localhost\Practica5.xml has finished in 53 ms
+nov 28, 2018 12:50:58 PM org.apache.catalina.util.LifecycleBase start
+INFORMACIÓN: The start() method was called on component [StandardEngine[Catalina].StandardHost[localhost].StandardContext[/Practica5]] after start() had already been called. The second call will be ignored.

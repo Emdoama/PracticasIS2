@@ -1,0 +1,11 @@
+Pregunta 1: Extrae del código anterior y explica, en el fichero Preguntas.txt las líneas de código que permiten gestionar el número de recargas.
+	AccesosInt = new Integer(AccesosViejo.intValue() + 1);} Este es el parametro que pasamos por valor, y cada vez aumenta en 1.
+
+Pregunta 2: ¿Qué se muestra ahora en pantalla y por qué? ¿Cuál es el código asociado?
+	La diferencia radica en que mediante la URL hemos introducido los valores de 'login' y 'password'.
+	    login = request.getParameter("login"); Esto recoge el 'login'.
+        password = request.getParameter("password"); Esto recoge el 'password'.
+
+Pregunta 3: Investiga y explica la diferencia entre paso de parámetros por método post y por método get.
+	El paso de parametros mediante 'get' son poco seguros, ya que se muestra en la URL.
+	El paso de parametros mediantee 'post' es mas seguro, ya que oculta la informacion sensible.
