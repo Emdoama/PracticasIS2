@@ -120,3 +120,17 @@ nov 28, 2018 12:50:58 PM org.apache.catalina.startup.HostConfig deployDescriptor
 INFORMACIÓN: Deployment of configuration descriptor C:\Users\Alber\OneDrive\Universidad\IS2\Practicas\PracticasIS2\Practica 5\Tomcat\apache-tomcat-7.0.92\conf\Catalina\localhost\Practica5.xml has finished in 53 ms
 nov 28, 2018 12:50:58 PM org.apache.catalina.util.LifecycleBase start
 INFORMACIÓN: The start() method was called on component [StandardEngine[Catalina].StandardHost[localhost].StandardContext[/Practica5]] after start() had already been called. The second call will be ignored.
+nov 28, 2018 1:01:53 PM org.apache.catalina.startup.HostConfig deployDescriptor
+INFORMACIÓN: Desplieque del descriptor de configuración C:\Users\Alber\OneDrive\Universidad\IS2\Practicas\PracticasIS2\Practica 5\Tomcat\apache-tomcat-7.0.92\conf\Catalina\localhost\s1.xml
+nov 28, 2018 1:01:53 PM org.apache.catalina.startup.HostConfig deployDescriptor
+INFORMACIÓN: Deployment of configuration descriptor C:\Users\Alber\OneDrive\Universidad\IS2\Practicas\PracticasIS2\Practica 5\Tomcat\apache-tomcat-7.0.92\conf\Catalina\localhost\s1.xml has finished in 55 ms
+nov 28, 2018 1:01:53 PM org.apache.catalina.util.LifecycleBase start
+INFORMACIÓN: The start() method was called on component [StandardEngine[Catalina].StandardHost[localhost].StandardContext[/s1]] after start() had already been called. The second call will be ignored.
+nov 28, 2018 1:06:23 PM org.apache.catalina.startup.HostConfig undeploy
+INFORMACIÓN: Repliegue (undeploy) de la aplicación web que tiene como trayectoria de contexto /s1
+nov 28, 2018 1:06:23 PM org.apache.catalina.startup.HostConfig deployDescriptor
+INFORMACIÓN: Desplieque del descriptor de configuración C:\Users\Alber\OneDrive\Universidad\IS2\Practicas\PracticasIS2\Practica 5\Tomcat\apache-tomcat-7.0.92\conf\Catalina\localhost\s1.xml
+nov 28, 2018 1:06:23 PM org.apache.catalina.startup.HostConfig deployDescriptor
+INFORMACIÓN: Deployment of configuration descriptor C:\Users\Alber\OneDrive\Universidad\IS2\Practicas\PracticasIS2\Practica 5\Tomcat\apache-tomcat-7.0.92\conf\Catalina\localhost\s1.xml has finished in 51 ms
+nov 28, 2018 1:06:23 PM org.apache.catalina.util.LifecycleBase start
+INFORMACIÓN: The start() method was called on component [StandardEngine[Catalina].StandardHost[localhost].StandardContext[/s1]] after start() had already been called. The second call will be ignored.
