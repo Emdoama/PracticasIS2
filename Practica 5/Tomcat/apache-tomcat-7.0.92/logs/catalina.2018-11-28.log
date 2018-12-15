@@ -1,0 +1,136 @@
+nov 28, 2018 12:15:22 PM org.apache.catalina.startup.VersionLoggerListener log
+INFORMACIÓN: Server version:        Apache Tomcat/7.0.92
+nov 28, 2018 12:15:22 PM org.apache.catalina.startup.VersionLoggerListener log
+INFORMACIÓN: Server built:          Nov 9 2018 11:07:44 UTC
+nov 28, 2018 12:15:22 PM org.apache.catalina.startup.VersionLoggerListener log
+INFORMACIÓN: Server number:         7.0.92.0
+nov 28, 2018 12:15:22 PM org.apache.catalina.startup.VersionLoggerListener log
+INFORMACIÓN: OS Name:               Windows 10
+nov 28, 2018 12:15:22 PM org.apache.catalina.startup.VersionLoggerListener log
+INFORMACIÓN: OS Version:            10.0
+nov 28, 2018 12:15:22 PM org.apache.catalina.startup.VersionLoggerListener log
+INFORMACIÓN: Architecture:          amd64
+nov 28, 2018 12:15:22 PM org.apache.catalina.startup.VersionLoggerListener log
+INFORMACIÓN: Java Home:             C:\Program Files\Java\jdk1.8.0_181\jre
+nov 28, 2018 12:15:22 PM org.apache.catalina.startup.VersionLoggerListener log
+INFORMACIÓN: JVM Version:           1.8.0_181-b13
+nov 28, 2018 12:15:22 PM org.apache.catalina.startup.VersionLoggerListener log
+INFORMACIÓN: JVM Vendor:            Oracle Corporation
+nov 28, 2018 12:15:22 PM org.apache.catalina.startup.VersionLoggerListener log
+INFORMACIÓN: CATALINA_BASE:         C:\Users\Alber\OneDrive\Universidad\IS2\Practicas\PracticasIS2\Practica 5\Tomcat\apache-tomcat-7.0.92
+nov 28, 2018 12:15:22 PM org.apache.catalina.startup.VersionLoggerListener log
+INFORMACIÓN: CATALINA_HOME:         C:\Users\Alber\OneDrive\Universidad\IS2\Practicas\PracticasIS2\Practica 5\Tomcat\apache-tomcat-7.0.92
+nov 28, 2018 12:15:22 PM org.apache.catalina.startup.VersionLoggerListener log
+INFORMACIÓN: Command line argument: -Djava.util.logging.config.file=C:\Users\Alber\OneDrive\Universidad\IS2\Practicas\PracticasIS2\Practica 5\Tomcat\apache-tomcat-7.0.92\conf\logging.properties
+nov 28, 2018 12:15:22 PM org.apache.catalina.startup.VersionLoggerListener log
+INFORMACIÓN: Command line argument: -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+nov 28, 2018 12:15:22 PM org.apache.catalina.startup.VersionLoggerListener log
+INFORMACIÓN: Command line argument: -Djdk.tls.ephemeralDHKeySize=2048
+nov 28, 2018 12:15:22 PM org.apache.catalina.startup.VersionLoggerListener log
+INFORMACIÓN: Command line argument: -Dignore.endorsed.dirs=
+nov 28, 2018 12:15:22 PM org.apache.catalina.startup.VersionLoggerListener log
+INFORMACIÓN: Command line argument: -Dcatalina.base=C:\Users\Alber\OneDrive\Universidad\IS2\Practicas\PracticasIS2\Practica 5\Tomcat\apache-tomcat-7.0.92
+nov 28, 2018 12:15:22 PM org.apache.catalina.startup.VersionLoggerListener log
+INFORMACIÓN: Command line argument: -Dcatalina.home=C:\Users\Alber\OneDrive\Universidad\IS2\Practicas\PracticasIS2\Practica 5\Tomcat\apache-tomcat-7.0.92
+nov 28, 2018 12:15:22 PM org.apache.catalina.startup.VersionLoggerListener log
+INFORMACIÓN: Command line argument: -Djava.io.tmpdir=C:\Users\Alber\OneDrive\Universidad\IS2\Practicas\PracticasIS2\Practica 5\Tomcat\apache-tomcat-7.0.92\temp
+nov 28, 2018 12:15:22 PM org.apache.catalina.core.AprLifecycleListener lifecycleEvent
+INFORMACIÓN: Cargada la biblioteca nativa APR de Apache Tomcat 1.2.18 con la versión APR 1.6.5.
+nov 28, 2018 12:15:22 PM org.apache.catalina.core.AprLifecycleListener lifecycleEvent
+INFORMACIÓN: Capacidades APR: IPv6 [true], enviar fichero [true], aceptar filtros [false], aleatorio [true].
+nov 28, 2018 12:15:22 PM org.apache.catalina.core.AprLifecycleListener initializeSSL
+INFORMACIÓN: OpenSSL inicializado correctamente (OpenSSL 1.1.1  11 Sep 2018)
+nov 28, 2018 12:15:22 PM org.apache.coyote.AbstractProtocol init
+INFORMACIÓN: Initializing ProtocolHandler ["http-apr-8080"]
+nov 28, 2018 12:15:22 PM org.apache.coyote.AbstractProtocol init
+INFORMACIÓN: Initializing ProtocolHandler ["ajp-apr-8009"]
+nov 28, 2018 12:15:22 PM org.apache.catalina.startup.Catalina load
+INFORMACIÓN: Initialization processed in 580 ms
+nov 28, 2018 12:15:22 PM org.apache.catalina.core.StandardService startInternal
+INFORMACIÓN: Arrancando servicio Catalina
+nov 28, 2018 12:15:22 PM org.apache.catalina.core.StandardEngine startInternal
+INFORMACIÓN: Starting Servlet Engine: Apache Tomcat/7.0.92
+nov 28, 2018 12:15:22 PM org.apache.catalina.startup.HostConfig deployDirectory
+INFORMACIÓN: Despliegue del directorio C:\Users\Alber\OneDrive\Universidad\IS2\Practicas\PracticasIS2\Practica 5\Tomcat\apache-tomcat-7.0.92\webapps\docs de la aplicación web
+nov 28, 2018 12:15:23 PM org.apache.catalina.util.SessionIdGeneratorBase createSecureRandom
+ADVERTENCIA: Creation of SecureRandom instance for session ID generation using [SHA1PRNG] took [278] milliseconds.
+nov 28, 2018 12:15:23 PM org.apache.catalina.startup.HostConfig deployDirectory
+INFORMACIÓN: Deployment of web application directory C:\Users\Alber\OneDrive\Universidad\IS2\Practicas\PracticasIS2\Practica 5\Tomcat\apache-tomcat-7.0.92\webapps\docs has finished in 650 ms
+nov 28, 2018 12:15:23 PM org.apache.catalina.startup.HostConfig deployDirectory
+INFORMACIÓN: Despliegue del directorio C:\Users\Alber\OneDrive\Universidad\IS2\Practicas\PracticasIS2\Practica 5\Tomcat\apache-tomcat-7.0.92\webapps\examples de la aplicación web
+nov 28, 2018 12:15:23 PM org.apache.catalina.startup.HostConfig deployDirectory
+INFORMACIÓN: Deployment of web application directory C:\Users\Alber\OneDrive\Universidad\IS2\Practicas\PracticasIS2\Practica 5\Tomcat\apache-tomcat-7.0.92\webapps\examples has finished in 378 ms
+nov 28, 2018 12:15:23 PM org.apache.catalina.startup.HostConfig deployDirectory
+INFORMACIÓN: Despliegue del directorio C:\Users\Alber\OneDrive\Universidad\IS2\Practicas\PracticasIS2\Practica 5\Tomcat\apache-tomcat-7.0.92\webapps\host-manager de la aplicación web
+nov 28, 2018 12:15:23 PM org.apache.catalina.startup.HostConfig deployDirectory
+INFORMACIÓN: Deployment of web application directory C:\Users\Alber\OneDrive\Universidad\IS2\Practicas\PracticasIS2\Practica 5\Tomcat\apache-tomcat-7.0.92\webapps\host-manager has finished in 83 ms
+nov 28, 2018 12:15:23 PM org.apache.catalina.startup.HostConfig deployDirectory
+INFORMACIÓN: Despliegue del directorio C:\Users\Alber\OneDrive\Universidad\IS2\Practicas\PracticasIS2\Practica 5\Tomcat\apache-tomcat-7.0.92\webapps\manager de la aplicación web
+nov 28, 2018 12:15:23 PM org.apache.catalina.startup.HostConfig deployDirectory
+INFORMACIÓN: Deployment of web application directory C:\Users\Alber\OneDrive\Universidad\IS2\Practicas\PracticasIS2\Practica 5\Tomcat\apache-tomcat-7.0.92\webapps\manager has finished in 79 ms
+nov 28, 2018 12:15:23 PM org.apache.catalina.startup.HostConfig deployDirectory
+INFORMACIÓN: Despliegue del directorio C:\Users\Alber\OneDrive\Universidad\IS2\Practicas\PracticasIS2\Practica 5\Tomcat\apache-tomcat-7.0.92\webapps\ROOT de la aplicación web
+nov 28, 2018 12:15:23 PM org.apache.catalina.startup.HostConfig deployDirectory
+INFORMACIÓN: Deployment of web application directory C:\Users\Alber\OneDrive\Universidad\IS2\Practicas\PracticasIS2\Practica 5\Tomcat\apache-tomcat-7.0.92\webapps\ROOT has finished in 57 ms
+nov 28, 2018 12:15:23 PM org.apache.coyote.AbstractProtocol start
+INFORMACIÓN: Starting ProtocolHandler ["http-apr-8080"]
+nov 28, 2018 12:15:23 PM org.apache.coyote.AbstractProtocol start
+INFORMACIÓN: Starting ProtocolHandler ["ajp-apr-8009"]
+nov 28, 2018 12:15:24 PM org.apache.catalina.startup.Catalina start
+INFORMACIÓN: Server startup in 1336 ms
+nov 28, 2018 12:26:52 PM org.apache.catalina.startup.HostConfig deployDescriptor
+INFORMACIÓN: Desplieque del descriptor de configuración C:\Users\Alber\OneDrive\Universidad\IS2\Practicas\PracticasIS2\Practica 5\Tomcat\apache-tomcat-7.0.92\conf\Catalina\localhost\Practica_5.xml
+nov 28, 2018 12:26:52 PM org.apache.catalina.startup.HostConfig deployDescriptor
+INFORMACIÓN: Deployment of configuration descriptor C:\Users\Alber\OneDrive\Universidad\IS2\Practicas\PracticasIS2\Practica 5\Tomcat\apache-tomcat-7.0.92\conf\Catalina\localhost\Practica_5.xml has finished in 98 ms
+nov 28, 2018 12:26:52 PM org.apache.catalina.util.LifecycleBase start
+INFORMACIÓN: The start() method was called on component [StandardEngine[Catalina].StandardHost[localhost].StandardContext[/Practica_5]] after start() had already been called. The second call will be ignored.
+nov 28, 2018 12:27:33 PM org.apache.catalina.startup.HostConfig undeploy
+INFORMACIÓN: Repliegue (undeploy) de la aplicación web que tiene como trayectoria de contexto /Practica_5
+nov 28, 2018 12:27:33 PM org.apache.catalina.startup.HostConfig deployDescriptor
+INFORMACIÓN: Desplieque del descriptor de configuración C:\Users\Alber\OneDrive\Universidad\IS2\Practicas\PracticasIS2\Practica 5\Tomcat\apache-tomcat-7.0.92\conf\Catalina\localhost\Practica_5.xml
+nov 28, 2018 12:27:33 PM org.apache.catalina.startup.HostConfig deployDescriptor
+INFORMACIÓN: Deployment of configuration descriptor C:\Users\Alber\OneDrive\Universidad\IS2\Practicas\PracticasIS2\Practica 5\Tomcat\apache-tomcat-7.0.92\conf\Catalina\localhost\Practica_5.xml has finished in 64 ms
+nov 28, 2018 12:27:33 PM org.apache.catalina.util.LifecycleBase start
+INFORMACIÓN: The start() method was called on component [StandardEngine[Catalina].StandardHost[localhost].StandardContext[/Practica_5]] after start() had already been called. The second call will be ignored.
+nov 28, 2018 12:28:11 PM org.apache.catalina.startup.HostConfig undeploy
+INFORMACIÓN: Repliegue (undeploy) de la aplicación web que tiene como trayectoria de contexto /Practica_5
+nov 28, 2018 12:28:31 PM org.apache.catalina.startup.HostConfig deployDescriptor
+INFORMACIÓN: Desplieque del descriptor de configuración C:\Users\Alber\OneDrive\Universidad\IS2\Practicas\PracticasIS2\Practica 5\Tomcat\apache-tomcat-7.0.92\conf\Catalina\localhost\Practica5.xml
+nov 28, 2018 12:28:32 PM org.apache.catalina.startup.HostConfig deployDescriptor
+INFORMACIÓN: Deployment of configuration descriptor C:\Users\Alber\OneDrive\Universidad\IS2\Practicas\PracticasIS2\Practica 5\Tomcat\apache-tomcat-7.0.92\conf\Catalina\localhost\Practica5.xml has finished in 67 ms
+nov 28, 2018 12:28:32 PM org.apache.catalina.util.LifecycleBase start
+INFORMACIÓN: The start() method was called on component [StandardEngine[Catalina].StandardHost[localhost].StandardContext[/Practica5]] after start() had already been called. The second call will be ignored.
+nov 28, 2018 12:29:49 PM org.apache.catalina.core.StandardContext reload
+INFORMACIÓN: Ha comenzado la recarga de Contexto [/Practica5]
+nov 28, 2018 12:29:50 PM org.apache.catalina.core.StandardContext reload
+INFORMACIÓN: Se ha completado la recarga de este Contexto
+nov 28, 2018 12:41:00 PM org.apache.catalina.core.StandardContext reload
+INFORMACIÓN: Ha comenzado la recarga de Contexto [/Practica5]
+nov 28, 2018 12:41:00 PM org.apache.catalina.core.StandardContext reload
+INFORMACIÓN: Se ha completado la recarga de este Contexto
+nov 28, 2018 12:50:53 PM org.apache.catalina.core.StandardContext reload
+INFORMACIÓN: Ha comenzado la recarga de Contexto [/Practica5]
+nov 28, 2018 12:50:53 PM org.apache.catalina.core.StandardContext reload
+INFORMACIÓN: Se ha completado la recarga de este Contexto
+nov 28, 2018 12:50:58 PM org.apache.catalina.startup.HostConfig undeploy
+INFORMACIÓN: Repliegue (undeploy) de la aplicación web que tiene como trayectoria de contexto /Practica5
+nov 28, 2018 12:50:58 PM org.apache.catalina.startup.HostConfig deployDescriptor
+INFORMACIÓN: Desplieque del descriptor de configuración C:\Users\Alber\OneDrive\Universidad\IS2\Practicas\PracticasIS2\Practica 5\Tomcat\apache-tomcat-7.0.92\conf\Catalina\localhost\Practica5.xml
+nov 28, 2018 12:50:58 PM org.apache.catalina.startup.HostConfig deployDescriptor
+INFORMACIÓN: Deployment of configuration descriptor C:\Users\Alber\OneDrive\Universidad\IS2\Practicas\PracticasIS2\Practica 5\Tomcat\apache-tomcat-7.0.92\conf\Catalina\localhost\Practica5.xml has finished in 53 ms
+nov 28, 2018 12:50:58 PM org.apache.catalina.util.LifecycleBase start
+INFORMACIÓN: The start() method was called on component [StandardEngine[Catalina].StandardHost[localhost].StandardContext[/Practica5]] after start() had already been called. The second call will be ignored.
+nov 28, 2018 1:01:53 PM org.apache.catalina.startup.HostConfig deployDescriptor
+INFORMACIÓN: Desplieque del descriptor de configuración C:\Users\Alber\OneDrive\Universidad\IS2\Practicas\PracticasIS2\Practica 5\Tomcat\apache-tomcat-7.0.92\conf\Catalina\localhost\s1.xml
+nov 28, 2018 1:01:53 PM org.apache.catalina.startup.HostConfig deployDescriptor
+INFORMACIÓN: Deployment of configuration descriptor C:\Users\Alber\OneDrive\Universidad\IS2\Practicas\PracticasIS2\Practica 5\Tomcat\apache-tomcat-7.0.92\conf\Catalina\localhost\s1.xml has finished in 55 ms
+nov 28, 2018 1:01:53 PM org.apache.catalina.util.LifecycleBase start
+INFORMACIÓN: The start() method was called on component [StandardEngine[Catalina].StandardHost[localhost].StandardContext[/s1]] after start() had already been called. The second call will be ignored.
+nov 28, 2018 1:06:23 PM org.apache.catalina.startup.HostConfig undeploy
+INFORMACIÓN: Repliegue (undeploy) de la aplicación web que tiene como trayectoria de contexto /s1
+nov 28, 2018 1:06:23 PM org.apache.catalina.startup.HostConfig deployDescriptor
+INFORMACIÓN: Desplieque del descriptor de configuración C:\Users\Alber\OneDrive\Universidad\IS2\Practicas\PracticasIS2\Practica 5\Tomcat\apache-tomcat-7.0.92\conf\Catalina\localhost\s1.xml
+nov 28, 2018 1:06:23 PM org.apache.catalina.startup.HostConfig deployDescriptor
+INFORMACIÓN: Deployment of configuration descriptor C:\Users\Alber\OneDrive\Universidad\IS2\Practicas\PracticasIS2\Practica 5\Tomcat\apache-tomcat-7.0.92\conf\Catalina\localhost\s1.xml has finished in 51 ms
+nov 28, 2018 1:06:23 PM org.apache.catalina.util.LifecycleBase start
+INFORMACIÓN: The start() method was called on component [StandardEngine[Catalina].StandardHost[localhost].StandardContext[/s1]] after start() had already been called. The second call will be ignored.
