@@ -67,7 +67,7 @@ public class ParamShoppingCartTest {
     @Test
     public void testGetBalance() {
         System.out.println("Test funcion obtener balance. GetBalance()\n");
-              
+         
        
         double expResult = 1.0;
         

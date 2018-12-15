@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="es"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../.resources/report.gif" type="image/gif"/><title>ShoppingCart.java</title><link rel="stylesheet" href="../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../.sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">JaCoCoverage analysis of project &quot;Practica_4&quot; (powered by JaCoCo from EclEmma)</a> &gt; <a href="index.source.html" class="el_package">practica.pkg4</a> &gt; <span class="el_source">ShoppingCart.java</span></div><h1>ShoppingCart.java</h1><pre class="source lang-java linenums">package practica.pkg4;
+
+import java.io.IOException;
+import java.io.Writer;
+import java.util.*;
+
+/**
+ * An example shopping cart. 
+ * This class should not be mistaken for a production-quality shopping cart. 
+ * It's merely provided as an example class under test as described in the
+ * JUnitPrimer.
+ *
+ * @author &lt;a href=&quot;mailto:mike@clarkware.com&quot;&gt;Mike Clark&lt;/a&gt;
+ * @author &lt;a href=&quot;http://www.clarkware.com&quot;&gt;Clarkware Consulting, Inc.&lt;/a&gt; 
+ */
+ 
+public class ShoppingCart {
+
+    private ArrayList&lt;Product&gt; _items;
+
+    /**
+     * Constructs a ShoppingCart instance.
+     */
+<span class="fc" id="L24">    public ShoppingCart() {</span>
+<span class="fc" id="L25">        _items = new ArrayList&lt;Product&gt;();</span>
+<span class="fc" id="L26">    }</span>
+
+    /**
+     * Returns the balance.
+     * @return Balance.
+     */
+    public double getBalance() {
+<span class="fc" id="L33">        Iterator&lt;Product&gt; i = _items.iterator();</span>
+<span class="fc" id="L34">        double balance = 0.00;</span>
+<span class="fc bfc" id="L35" title="All 2 branches covered.">        while (i.hasNext()) {</span>
+<span class="fc" id="L36">            Product p = (Product)i.next();</span>
+<span class="fc" id="L37">            balance = balance + p.getPrice();</span>
+<span class="fc" id="L38">        }</span>
+
+<span class="fc" id="L40">        return balance;</span>
+    }
+    
+    /**
+     * Adds the specified product.
+     * @param p Product.
+     */
+    public void addItem(Product p) {
+<span class="fc" id="L48">        _items.add(p);</span>
+<span class="fc" id="L49">    }</span>
+
+    /**
+     * Removes the specified product.
+     * @param p Product.
+     * @throws ProductNotFoundException If the product does not exist.
+     */
+    public void removeItem(Product p) throws ProductNotFoundException {
+<span class="fc bfc" id="L57" title="All 2 branches covered.">        if (!_items.remove(p)) {</span>
+<span class="fc" id="L58">            throw new ProductNotFoundException();</span>
+        }
+<span class="fc" id="L60">    }</span>
+
+    /**
+     * Returns the number of items in the cart.
+     * @return Item count.
+     */
+    public int getItemCount() {
+<span class="fc" id="L67">        return _items.size();</span>
+    }
+    
+    /**
+     * Empties the cart.
+     */
+    public void empty() {
+<span class="fc" id="L74">        _items = new ArrayList&lt;Product&gt;();</span>
+<span class="fc" id="L75">    }</span>
+
+    /**
+     * Indicates whether the cart is empty.
+     * @return true if the cart is empty;
+     *     false otherwise.
+     */
+    public boolean isEmpty() {
+<span class="fc bfc" id="L83" title="All 2 branches covered.">        return (_items.size() == 0);</span>
+    }
+    
+    public void imprimeFactura(Writer writer) throws IOException
+    {
+<span class="nc" id="L88">    	writer.append(_items.toString());</span>
+<span class="nc" id="L89">    	writer.flush();</span>
+<span class="nc" id="L90">    	writer.close();</span>
+<span class="nc" id="L91">    }</span>
+    
+    // Ejercicio 1: Añadir metodo findProduct(String titulo)  // Devuelve true o false si el titulo esta
+    
+    public boolean findProduct(String titulo)
+    {
+<span class="fc" id="L97">        boolean existe = false;</span>
+        
+<span class="fc bfc" id="L99" title="All 2 branches covered.">        for (int i = 0; i &lt; getItemCount(); i++)</span>
+        {
+          
+            
+<span class="fc bfc" id="L103" title="All 2 branches covered.">            if(titulo.equals(_items.get(i).getTitle()))</span>
+            {
+              
+<span class="fc" id="L106">                existe = true;</span>
+            }
+        }
+        
+<span class="fc" id="L110">        return existe;</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.6.201602180812</span></div></body></html>

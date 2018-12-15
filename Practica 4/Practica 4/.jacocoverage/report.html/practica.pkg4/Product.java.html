@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="es"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../.resources/report.gif" type="image/gif"/><title>Product.java</title><link rel="stylesheet" href="../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../.sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">JaCoCoverage analysis of project &quot;Practica_4&quot; (powered by JaCoCo from EclEmma)</a> &gt; <a href="index.source.html" class="el_package">practica.pkg4</a> &gt; <span class="el_source">Product.java</span></div><h1>Product.java</h1><pre class="source lang-java linenums">package practica.pkg4;
+/**
+ * An example product for use in the example shopping cart.
+ * @author Mike Clark
+ * @author Clarkware Consulting, Inc. 
+ */
+ 
+public class Product {
+
+	private String _title;
+	private double _price;
+
+	/**
+	 * Constructs a Product.
+	 * @param title Product title.
+	 * @param price Product price.
+	 */
+<span class="fc" id="L18">	public Product(String title, double price) {</span>
+<span class="fc" id="L19">		_title = title;</span>
+<span class="fc" id="L20">		_price = price;</span>
+<span class="fc" id="L21">	}</span>
+
+	/**
+	 * Returns the product title.
+	 * @return Title.
+	 */
+	public String getTitle() {
+<span class="fc" id="L28">		return _title;</span>
+	}
+
+	/**
+	 * Returns the product price.
+	 * @return Price.
+	 */
+	public double getPrice() {
+<span class="fc" id="L36">		return _price;</span>
+	}
+
+	/**
+	 * Tests product equality.
+	 * @return true if the products
+	 *         are equal.
+	 */
+	public boolean equals(Object o) {
+	
+<span class="pc bpc" id="L46" title="1 of 2 branches missed.">		if (o instanceof Product) {</span>
+<span class="fc" id="L47">			Product p = (Product)o;</span>
+<span class="fc" id="L48">			return p.getTitle().equals(_title);</span>
+		}
+
+<span class="nc" id="L51">		return false;</span>
+	}
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.6.201602180812</span></div></body></html>
