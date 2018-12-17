@@ -86,3 +86,69 @@ dic 17, 2018 5:06:01 PM org.apache.coyote.AbstractProtocol start
 INFORMACIÓN: Starting ProtocolHandler ["ajp-apr-8009"]
 dic 17, 2018 5:06:01 PM org.apache.catalina.startup.Catalina start
 INFORMACIÓN: Server startup in 2912 ms
+dic 17, 2018 5:27:10 PM org.apache.catalina.startup.HostConfig undeploy
+INFORMACIÓN: Repliegue (undeploy) de la aplicación web que tiene como trayectoria de contexto /s1
+dic 17, 2018 5:27:21 PM org.apache.catalina.startup.HostConfig deployDescriptor
+INFORMACIÓN: Desplieque del descriptor de configuración C:\Users\Alber\OneDrive\Universidad\IS2\Practicas\PracticasIS2\Practica 5\Tomcat\apache-tomcat-7.0.92\conf\Catalina\localhost\s1.xml
+dic 17, 2018 5:27:21 PM org.apache.catalina.startup.HostConfig deployDescriptor
+INFORMACIÓN: Deployment of configuration descriptor C:\Users\Alber\OneDrive\Universidad\IS2\Practicas\PracticasIS2\Practica 5\Tomcat\apache-tomcat-7.0.92\conf\Catalina\localhost\s1.xml has finished in 59 ms
+dic 17, 2018 5:27:21 PM org.apache.catalina.util.LifecycleBase start
+INFORMACIÓN: The start() method was called on component [StandardEngine[Catalina].StandardHost[localhost].StandardContext[/s1]] after start() had already been called. The second call will be ignored.
+dic 17, 2018 5:33:28 PM org.apache.catalina.startup.HostConfig deployDescriptor
+INFORMACIÓN: Desplieque del descriptor de configuración C:\Users\Alber\OneDrive\Universidad\IS2\Practicas\PracticasIS2\Practica 5\Tomcat\apache-tomcat-7.0.92\conf\Catalina\localhost\PracServlets.xml
+dic 17, 2018 5:33:28 PM org.apache.catalina.startup.TldConfig execute
+INFORMACIÓN: At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+dic 17, 2018 5:33:28 PM org.apache.catalina.startup.HostConfig deployDescriptor
+INFORMACIÓN: Deployment of configuration descriptor C:\Users\Alber\OneDrive\Universidad\IS2\Practicas\PracticasIS2\Practica 5\Tomcat\apache-tomcat-7.0.92\conf\Catalina\localhost\PracServlets.xml has finished in 198 ms
+dic 17, 2018 5:33:28 PM org.apache.catalina.util.LifecycleBase start
+INFORMACIÓN: The start() method was called on component [StandardEngine[Catalina].StandardHost[localhost].StandardContext[/PracServlets]] after start() had already been called. The second call will be ignored.
+dic 17, 2018 6:02:45 PM org.apache.catalina.core.StandardContext reload
+INFORMACIÓN: Ha comenzado la recarga de Contexto [/PracServlets]
+dic 17, 2018 6:02:45 PM org.apache.catalina.startup.TldConfig execute
+INFORMACIÓN: At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+dic 17, 2018 6:02:45 PM org.apache.catalina.core.StandardContext reload
+INFORMACIÓN: Se ha completado la recarga de este Contexto
+dic 17, 2018 6:04:00 PM org.apache.catalina.core.StandardContext reload
+INFORMACIÓN: Ha comenzado la recarga de Contexto [/PracServlets]
+dic 17, 2018 6:04:00 PM org.apache.catalina.startup.TldConfig execute
+INFORMACIÓN: At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+dic 17, 2018 6:04:00 PM org.apache.catalina.core.StandardContext reload
+INFORMACIÓN: Se ha completado la recarga de este Contexto
+dic 17, 2018 6:04:01 PM org.apache.catalina.core.StandardContext reload
+INFORMACIÓN: Ha comenzado la recarga de Contexto [/PracServlets]
+dic 17, 2018 6:04:01 PM org.apache.catalina.startup.TldConfig execute
+INFORMACIÓN: At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+dic 17, 2018 6:04:01 PM org.apache.catalina.core.StandardContext reload
+INFORMACIÓN: Se ha completado la recarga de este Contexto
+dic 17, 2018 6:06:42 PM org.apache.catalina.core.StandardContext reload
+INFORMACIÓN: Ha comenzado la recarga de Contexto [/PracServlets]
+dic 17, 2018 6:06:42 PM org.apache.catalina.startup.TldConfig execute
+INFORMACIÓN: At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+dic 17, 2018 6:06:42 PM org.apache.catalina.core.StandardContext reload
+INFORMACIÓN: Se ha completado la recarga de este Contexto
+dic 17, 2018 6:07:06 PM org.apache.catalina.core.StandardContext reload
+INFORMACIÓN: Ha comenzado la recarga de Contexto [/PracServlets]
+dic 17, 2018 6:07:06 PM org.apache.catalina.startup.TldConfig execute
+INFORMACIÓN: At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+dic 17, 2018 6:07:06 PM org.apache.catalina.core.StandardContext reload
+INFORMACIÓN: Se ha completado la recarga de este Contexto
+dic 17, 2018 6:07:46 PM org.apache.catalina.core.StandardContext reload
+INFORMACIÓN: Ha comenzado la recarga de Contexto [/PracServlets]
+dic 17, 2018 6:07:46 PM org.apache.catalina.startup.TldConfig execute
+INFORMACIÓN: At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+dic 17, 2018 6:07:46 PM org.apache.catalina.core.StandardContext reload
+INFORMACIÓN: Se ha completado la recarga de este Contexto
+dic 17, 2018 6:08:19 PM org.apache.catalina.core.StandardContext reload
+INFORMACIÓN: Ha comenzado la recarga de Contexto [/PracServlets]
+dic 17, 2018 6:08:19 PM org.apache.catalina.startup.TldConfig execute
+INFORMACIÓN: At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+dic 17, 2018 6:08:19 PM org.apache.catalina.core.StandardContext reload
+INFORMACIÓN: Se ha completado la recarga de este Contexto
+dic 17, 2018 6:09:39 PM org.apache.catalina.core.StandardContext reload
+INFORMACIÓN: Ha comenzado la recarga de Contexto [/PracServlets]
+dic 17, 2018 6:09:39 PM org.apache.catalina.startup.TldConfig execute
+INFORMACIÓN: At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+dic 17, 2018 6:09:39 PM org.apache.catalina.core.StandardContext reload
+INFORMACIÓN: Se ha completado la recarga de este Contexto
+dic 17, 2018 6:09:53 PM org.apache.catalina.startup.HostConfig undeploy
+INFORMACIÓN: Repliegue (undeploy) de la aplicación web que tiene como trayectoria de contexto /PracServlets
