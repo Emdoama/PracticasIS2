@@ -1,0 +1,9 @@
+127.0.0.1 - - [17/Dec/2018:17:06:02 +0100] "HEAD /netbeans-tomcat-status-test HTTP/1.1" 404 -
+127.0.0.1 - - [17/Dec/2018:17:06:02 +0100] "HEAD /netbeans-tomcat-status-test HTTP/1.1" 404 -
+127.0.0.1 - - [17/Dec/2018:17:06:02 +0100] "HEAD /netbeans-tomcat-status-test HTTP/1.1" 404 -
+127.0.0.1 - - [17/Dec/2018:17:06:02 +0100] "HEAD /netbeans-tomcat-status-test HTTP/1.1" 404 -
+127.0.0.1 - EmiliSwanson [17/Dec/2018:17:06:02 +0100] "GET /manager/text/list HTTP/1.1" 200 395
+127.0.0.1 - EmiliSwanson [17/Dec/2018:17:06:02 +0100] "GET /manager/text/list HTTP/1.1" 200 395
+127.0.0.1 - - [17/Dec/2018:17:06:03 +0100] "GET /s1 HTTP/1.1" 302 -
+127.0.0.1 - - [17/Dec/2018:17:06:03 +0100] "GET /s1/ HTTP/1.1" 200 218
+127.0.0.1 - - [17/Dec/2018:17:06:03 +0100] "GET /favicon.ico HTTP/1.1" 200 21630
